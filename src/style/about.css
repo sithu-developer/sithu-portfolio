@@ -1,0 +1,96 @@
+/* Profile Photo */
+
+.profile-container {
+    position: relative;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.profile-wrapper {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    transform-style: preserve-3d; /* this means all its children will be 3D */
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float { /* this float is for animation : float ... above*/
+    0%,
+    100% {
+        transform: translateY(0) rotateX(0deg) rotateY(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
+    }
+    50% {
+        transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+    }
+    75% {
+        transform: translateY(-20px) rotateX(-5deg) rotateY(-5deg);
+    }
+}
+
+
+.profile-img {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    object-fit: cover;
+    border: 6px solid transparent;
+    box-shadow: 0 0 50px #28067c , 0 0 100px rgba(85, 0, 255, 0.5) , 0 0 150px rgba(85, 0, 255, 0.3);
+    animation: glow 3s infinite alternate , morph 12s ease-in-out infinite;
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(45deg , #15161a ,  #0a0a0b);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 40px #28067c , 0 0 80px rgba(85, 0, 255, 0.5) , 0 0 120px rgba(85, 0, 255, 0.3);
+        border-color:  #28067c ;
+    }
+    100% {
+        box-shadow: 0 0 60px #28067c , 0 0 120px rgba(85, 0, 255, 0.5) , 0 0 180px rgba(85, 0, 255, 0.3);
+        border-color:  #70027a ;
+    }
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+    }
+    33% {
+        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;   /*  a a b b / a b b a */  /* => a + a = 100% , b + b = 100% */
+    }
+    66% {
+        border-radius: 18% 82% 41% 59% / 59% 54% 46% 41%;   
+    }
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;  
+    }
+}
+
+.glow-effect {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    border-radius: 50%;
+    background: #28067c;
+    filter: blur(60px);
+    opacity: 0.3;
+    z-index: 1;
+    animation: pulse 4s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 0.4;
+        transform: scale(1.05);
+    }
+}
