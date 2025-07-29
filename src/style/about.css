@@ -1,3 +1,6 @@
+
+
+
 /* Profile Photo */
 
 .profile-container {
@@ -37,21 +40,21 @@
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     object-fit: cover;
     border: 6px solid transparent;
-    box-shadow: 0 0 50px #28067c , 0 0 100px rgba(85, 0, 255, 0.5) , 0 0 150px rgba(85, 0, 255, 0.3);
+    box-shadow: 0 0 50px #4ED7F1 , 0 0 100px rgba(0, 179, 255, 0.5) , 0 0 150px rgba(0, 179, 255, 0.5);
     animation: glow 3s infinite alternate , morph 12s ease-in-out infinite;
     position: relative;
     z-index: 10;
-    background: linear-gradient(45deg , #15161a ,  #0a0a0b);
+    background: linear-gradient(45deg , #ec1043 ,  #d24263);
 }
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 40px #28067c , 0 0 80px rgba(85, 0, 255, 0.5) , 0 0 120px rgba(85, 0, 255, 0.3);
-        border-color:  #28067c ;
+        box-shadow: 0 0 40px #4ED7F1 , 0 0 80px rgba(0, 179, 255, 0.5) , 0 0 120px rgba(0, 183, 255, 0.3);
+        border-color:  #400599 ;
     }
     100% {
-        box-shadow: 0 0 60px #28067c , 0 0 120px rgba(85, 0, 255, 0.5) , 0 0 180px rgba(85, 0, 255, 0.3);
-        border-color:  #70027a ;
+        box-shadow: 0 0 60px #4ED7F1 , 0 0 120px rgba(0, 179, 255, 0.5) , 0 0 180px rgba(0, 183, 255, 0.3);
+        border-color:  #053977 ;
     }
 }
 
@@ -77,7 +80,7 @@
     top: -5%;
     left: -5%;
     border-radius: 50%;
-    background: #28067c;
+    background: #4ED7F1;
     filter: blur(60px);
     opacity: 0.3;
     z-index: 1;
