@@ -5,16 +5,16 @@ import { createTheme } from "@mui/material";
 export const theme = createTheme({
     palette : {
         primary : {
-            main : "#4ED7F1"
+            main : "#27374D"
             // 001F3F
         },
         secondary : {
-            main : "#6FE6FC"
+            main : "#2c89fcff"
             //3A6D8C
         },
     },
     typography : {
-        fontFamily : "serif"
-        // fontFamily : "system-ui"
+        // fontFamily : "serif"
+        fontFamily : "system-ui"
     },
 })

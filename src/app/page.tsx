@@ -7,7 +7,7 @@ import { Box, Typography } from "@mui/material";
 
 export default function Home() {
   return (
-    <Box sx={ { position : "relative" , display : "flex" , flexDirection : "column" , justifyContent : "center" , alignItems : "center" , minHeight : "100vh" , width : "100vw" , overflowY : 'auto' , bgcolor : "black"}}>
+    <Box sx={ { position : "relative" , display : "flex" , flexDirection : "column" , justifyContent : "center" , alignItems : "center" , minHeight : "100vh" , width : "100vw" , overflowY : 'auto' , bgcolor : "primary.main"}}>
       <TopBar2 />
       <About2 />
       <Projects />

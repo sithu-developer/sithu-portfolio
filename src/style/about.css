@@ -44,17 +44,18 @@
     animation: glow 3s infinite alternate , morph 12s ease-in-out infinite;
     position: relative;
     z-index: 10;
-    background: linear-gradient(45deg , #ec1043 ,  #d24263);
+    /* background: linear-gradient(45deg , #ec1043 ,  #d24263); */
+    background: linear-gradient(45deg , #27374D ,  #05b7e8);
 }
 
 @keyframes glow {
     0% {
         box-shadow: 0 0 40px #4ED7F1 , 0 0 80px rgba(0, 179, 255, 0.5) , 0 0 120px rgba(0, 183, 255, 0.3);
-        border-color:  #400599 ;
+        border-color:  #00fbff ;
     }
     100% {
         box-shadow: 0 0 60px #4ED7F1 , 0 0 120px rgba(0, 179, 255, 0.5) , 0 0 180px rgba(0, 183, 255, 0.3);
-        border-color:  #053977 ;
+        border-color:  #000000 ;
     }
 }
 
