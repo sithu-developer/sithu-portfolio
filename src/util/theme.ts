@@ -12,9 +12,13 @@ export const theme = createTheme({
             main : "#2c89fcff"
             //3A6D8C
         },
+        text : {
+            primary : "white"
+        }
     },
     typography : {
         // fontFamily : "serif"
-        fontFamily : "system-ui"
+        fontFamily : "system-ui",
     },
+    
 })

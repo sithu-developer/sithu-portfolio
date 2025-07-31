@@ -1,24 +1,18 @@
 "use client"
 
-import { Box, Typography } from "@mui/material";
-
-import "@/style/top.css"
+import { Box, Button, Slide } from "@mui/material"
 
 const TopBar2 = () => {
     return (
-        <Box sx={{ display : "flex" , justifyContent : "space-between", alignItems : "center" , p : "10px 100px" , width : "100vw" , position : "fixed" , top : 0 , bgcolor : "#112e54ff" }}>
-            <Box sx={{ display : "flex" , gap : "5px" , cursor : "pointer" , userSelect : "none" , transition : "all 0.2s ease" , ":hover" : { scale : 1.05}}}>
-                <Typography sx={{ fontSize : "35px" , color : "white" , fontWeight : 700}} >Sithu</Typography>
-                <Typography sx={{ fontSize : "35px" , color : "secondary.main" , fontWeight : 700 , textShadow : "0 0 10px #2c89fcff"}} >Naing</Typography>
-            </Box>
-            <Box sx={{ display : "flex" , gap : "40px"}}>
+        <Slide in direction="down" timeout={{ enter : 2000}} >
+            <Box sx={{ display : "flex" , gap : "5px" , alignItems : "center" , position : "fixed" , top : "10px" , p : "10px" , zIndex : 1 , backgroundColor: "rgba(64, 60, 60, 0.1)", backdropFilter :  "blur(10px)", border: "1px solid rgba(255, 255, 255, 0.3)" , boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)" , borderRadius : "10px" }}>
                 {topItems.map(item => (
-                    <Box key={item.id} onClick={() => console.log("hello")}>
-                        <Typography sx={{ color : "white" , userSelect : "none" , fontWeight : 400 , position : 'relative' , cursor : "pointer" , fontSize : "16px" , transition : "all 0.4s cubic-bezier(0.19, 1, 0.22, 1)" , ":hover" : { color : "secondary.main" , scale : 1.1}}} className="topItem" >{item.name}</Typography>
-                    </Box>
+                    <Button key={item.id} onClick={() => console.log("hello")} 
+                        sx={{ fontWeight : "600" , fontSize : "18px" , color : "primary.dark"  , transition : "all 0.1s linear" , ":hover" : { transform : "translateY(-5px)"}}}
+                    >{item.name}</Button>
                 ))}
             </Box>
-        </Box>
+        </Slide>
     )
 }
 
