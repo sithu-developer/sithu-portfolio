@@ -26,8 +26,8 @@ const About = () => {
 
     return (
         <Box sx={{ display : "flex" , justifyContent : "center" , alignItems : "center" , gap : "60px" , width : "100vw" , height : "100vh" }}>
-          <Slide in direction="up" timeout={{ enter : 1000}} >
-            <Box sx={{ width : "500px" , mb : "50px" }} >
+          <Slide in direction="up" timeout={800} >
+            <Box sx={{ width : "550px" }} >
                 <Typography  sx={{ textAlign : "start" , fontSize : "25px" , lineHeight : 0.5 , fontWeight : 700 , color : "text.primary"}} >Hello! I'm </Typography>
                 <Typography variant="h3" sx={{ textAlign : "start" , fontWeight : 700, lineHeight : 1.4 , width : "fit-content" , background : "linear-gradient(to right, #dde1e4ff , #2196f3, #21cbf3 , white)" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent"}} >Si Thu Naing</Typography>
                 <Box sx={{ display : "flex"}}>
@@ -38,7 +38,9 @@ const About = () => {
                     </Box>
                   </Box>
                 </Box>
+                <Typography sx={{ textAlign : "justify" , color : "#cfccccff" }} >I love turning complex problems into elegant solutions. As a Next.js full-stack developer, I enjoy the entire development lifecycle - from architecting data models to deploying serverless functions and creating intuitive front-end interfaces.  I'm always looking for new challenges that allow me to grow my skills and contribute to meaningful projects.</Typography>
             </Box>
+
           </Slide>
           <Box className="profile-container" >
             <Box  className="profile-wrapper" >

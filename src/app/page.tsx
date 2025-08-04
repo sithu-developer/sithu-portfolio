@@ -2,7 +2,8 @@
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import TopBar from "@/components/TopBar";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+
 
 export default function Home() {
   return (
