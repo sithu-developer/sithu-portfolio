@@ -26,7 +26,7 @@ const About = () => {
 
     return (
         <Box sx={{ display : "flex" , justifyContent : "center" , alignItems : "center" , gap : "60px" , width : "100vw" , height : "100vh" }}>
-          <Slide in direction="up" timeout={800} >
+          <Slide in direction="up" timeout={{ enter : 800 }} >
             <Box sx={{ width : "550px" }} >
                 <Typography  sx={{ textAlign : "start" , fontSize : "25px" , lineHeight : 0.5 , fontWeight : 700 , color : "text.primary"}} >Hello! I'm </Typography>
                 <Typography variant="h3" sx={{ textAlign : "start" , fontWeight : 700, lineHeight : 1.4 , width : "fit-content" , background : "linear-gradient(to right, #dde1e4ff , #2196f3, #21cbf3 , white)" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent"}} >Si Thu Naing</Typography>
