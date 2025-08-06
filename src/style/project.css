@@ -16,5 +16,21 @@
         opacity: 1;
         scale: 1;
     }
-    
+        sx={{, ":hover" : { scale : 1.5 , border : "3px solid #2c89fcff" } }}
+    sx={{ display : "flex" , justifyContent : 'center' , alignItems : "center" , width : "380px" , height : "250px" , overflow : "hidden" , borderRadius : "5px" , cursor : "pointer" , transition : "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)" , ":hover" : { scale : 1.5 , border : "3px solid #2c89fcff" } }}
 } */
+
+.project-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    height: 250px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.project-img:hover {
+    transform: scale(1.06);
+    border: 4px solid rgb(44, 169, 252);
+}

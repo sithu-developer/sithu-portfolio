@@ -1,11 +1,19 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Grow, Typography } from "@mui/material";
 import Image from "next/image";
+import "@/style/project.css";
+import ProjectDetail from "./ProjectDetail";
+
+export interface ProjectDetailItems { 
+  open : boolean, 
+  id : number 
+}
 
 const Projects = () => {
   const [visible, setVisible] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
+  const [ projectDetailItems , setProjectDetailItems ] = useState<ProjectDetailItems>({id : 0 , open : false});
 
   useEffect(() => {
     const el = boxRef.current;
@@ -30,14 +38,17 @@ const Projects = () => {
       <Typography variant="h4" sx={{ fontWeight : 600 , background : "linear-gradient(to right, #dde1e4ff , #2196f3, #21cbf3 , white)" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent"}}>My Projects</Typography>
       <Box
         ref={boxRef}
-        sx={{  display : "flex" , justifyContent : "center" , alignItems : "center", width : "100%" , gap : "20px" }}
+        sx={{  display : "flex" , justifyContent : "center" , alignItems : "center", width : "100%" , gap : "30px" }}
       >
         {projects.map(item => ( 
-          <Box key={item.id} sx={{ display : "flex" , justifyContent : 'center' , alignItems : "center" , width : "380px" , height : "250px" , overflow : "hidden" , borderRadius : "5px" , cursor : "pointer" , transition : "all 100ms" , ":hover" : { scale : 1.05 , border : "2px solid #2c89fcff" } }}>
-            <Image alt={item.name} src={item.url} width={1000} height={1000} style={{  width : "auto" , height : "100%" }} />
-          </Box>
+          <Grow key={item.id} in={visible} {...(visible ? { timeout: item.id * 1000 } : {})} >
+            <Box className="project-box" onClick={() => setProjectDetailItems({ id : item.id , open : true})} >
+              <Image  className="project-img"  alt={item.name} src={item.url} width={1000} height={1000} style={{  width : "100%" , height : "100%" , borderRadius : "5px" , transition : "all 0.4s" }} />
+            </Box>
+          </Grow>
         ))}
       </Box>
+      <ProjectDetail projectDetailItems={projectDetailItems} setProjectDetailItems={setProjectDetailItems} />
     </Box>
   );
 };
@@ -60,9 +71,5 @@ const projects : ProjectType[] = [
     id : 2 ,
     name : "Happy Chatting",
     url : "/happy-chatting.png"
-  },{
-    id : 3 ,
-    name : "Happy Chatting",
-    url : "/happy-chatting.png"
-  },
+  }
 ]
