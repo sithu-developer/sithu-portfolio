@@ -1,8 +1,10 @@
 "use client"
-import { Box, Dialog, DialogContent, IconButton, Typography } from "@mui/material";
+import { Box, Button, Dialog, DialogContent, IconButton, Typography } from "@mui/material";
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Image from "next/image";
 import { ProjectDetailItems } from "./Projects";
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import CircleIcon from '@mui/icons-material/Circle';
 
 interface Props {
     projectDetailItems : ProjectDetailItems;
@@ -23,22 +25,56 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                     <Box sx={{ width : "160px" , height : "300px"}}>
                         <Image  alt={"hc"} src={"/hc-phone.png"} width={1000} height={1000} style={{  width : "auto" , height : "100%" , borderRadius : "5px" , transition : "all 0.4s" }} />
                     </Box>
-                    <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
-                        <Typography variant="h5">Happy Chatting</Typography>
-                        <Typography>- I developed a real-time messaging app,"Happy Chatting",</Typography>
-                        <Typography>- It offers a simple, clean and responsive interface, inspired by Telegram</Typography>
-                        <Typography>- I used Next.js , TypeScript , Material UI (MUI) , NextAuth.js , Prisma ORM , Redux Toolkit , PostgreSQL , Vercel and Aiven for PostgreSQL</Typography>
+                    <Box sx={{ display : "flex" , flexDirection : "column" , gap : "30px" , width : "700px" }}>
+                        <Typography variant="h4" sx={{ color : "#00bcd4" , fontWeight : 600 }}>Happy Chatting</Typography>
+                        <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px"}}>
+                            <Typography sx={{ fontSize : "17px"}}>A real-time messaging app built for simple, seamless conversations</Typography>
+                            <Box sx={{ display : "flex" , gap : "10px" }}>
+                                <CircleIcon sx={{ fontSize : 8 , color : "#00bcd4" , mt : "9px"}} />
+                                <Typography>  
+                                    <Box component={"span"} sx={{ color : "#00bcd4" , fontWeight : 600 ,}}>Real-Time Messaging</Box>
+                                    <Box component={"span"}>- Stay connected instantly with friends, family, and customers</Box>
+                                </Typography>
+                            </Box>
+                            <Box sx={{ display : "flex" , gap : "10px" }}>
+                                <CircleIcon sx={{ fontSize : 8 , color : "#00bcd4" , mt : "9px"}} />
+                                <Typography>  
+                                    <Box component={"span"} sx={{ color : "#00bcd4" , fontWeight : 600 ,}}>Clean, Responsive Design</Box>
+                                    <Box component={"span"}>- Inspired by Telegram, optimized for all devices</Box>
+                                </Typography>
+                            </Box>
+                            <Box sx={{ display : "flex" , gap : "10px" }}>
+                                <CircleIcon sx={{ fontSize : 8 , color : "#00bcd4" , mt : "9px"}} />
+                                <Typography>  
+                                    <Box component={"span"} sx={{ color : "#00bcd4" , fontWeight : 600 ,}}>Modern Tech Stack </Box>
+                                    <Box component={"span"}>- Powered by Next.js, TypeScript, Material UI (MUI), NextAuth.js, Prisma ORM,Redux Toolkit, PostgreSQL, Vercel, and Aiven for PostgreSQL</Box>
+                                </Typography>
+                            </Box>
+                        </Box>
+                        <Box sx={{ display : "flex" , alignItems : "center" , gap : "15px" }}>
+                            <Button component="a" href="https://chatting-rust.vercel.app" target="_blank" rel="noopener noreferrer" variant="outlined" sx={{ display :"flex" , alignItems : "center" , gap : "10px" , textTransform : "none" , boxShadow : "3px 3px 5px #2BCFFC"}}>
+                                <OpenInNewRoundedIcon sx={{ color : "#2BCFFC" , fontSize : "30px"}} />
+                                <Typography sx={{ color : "#2BCFFC"}} >Live Demo</Typography>
+                            </Button>
+                            <Button component="a" href="https://github.com/sithu-developer/chatting.git" target="_blank" rel="noopener noreferrer" variant="outlined" sx={{ display :"flex" , alignItems : "center" , gap : "10px" , textTransform : "none" , boxShadow : "3px 3px 5px #2BCFFC"}}>
+                                <Image alt="github icon" src={"/github-icon.svg"} width={500} height={500} style={{ width : "30px" , height : "auto" }} />
+                                <Typography sx={{ color : "#2BCFFC"  }} >Code</Typography>
+                            </Button>
+                        </Box>
                     </Box>
                 </Box>
                 {projectDetailItems.id === 1 ? (happyChattingDetails.map(item => (
-                    <Box key={item.id} sx={{ width : "100%" , height : "80%" , display : "flex" , flexDirection : (item.id % 2 ? "row-reverse" : "row") , justifyContent : "center" , alignItems : "center" , gap : "60px"}}>
+                    <Box key={item.id} sx={{ width : "100%" , height : "80%" , display : "flex" , flexDirection : (item.id % 2 ? "row" : "row-reverse") , justifyContent : "center" , alignItems : "center" , gap : "60px"}}>
                         <Box sx={{ width : "600px" , height : "400px"}}>
                             <Image  alt={"happy-chatting-detail-img"} src={item.imgUrl} width={1000} height={1000} style={{  width : "100%" , height : "auto" , borderRadius : "5px" , transition : "all 0.4s" }} />
                         </Box>
                         <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
-                            <Typography variant="h5">{item.heading}</Typography>
+                            <Typography variant="h4" sx={{ color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Typography>
                             {item.messages.map(mess => (
-                                <Typography key={mess}>{mess}</Typography>
+                                <Box sx={{ display : "flex" , alignItems : "center" , gap : "10px"}}>
+                                    <CircleIcon sx={{ fontSize : 8  }} />
+                                    <Typography key={mess}>{mess}</Typography>
+                                </Box>
                             ))}
                         </Box>
                     </Box>
@@ -63,30 +99,30 @@ const happyChattingDetails : happyChattingType[] = [
         id : 0,
         imgUrl : "/happy-chatting3.png",
         heading : "Sign In",
-        messages : [ "- Users can sign in easily and securely with their Google account" , "- I integrated NextAuth to provide secure and effortless sign-in with Google accounts"]
+        messages : [ "Users can sign in easily and securely with their Google account" , "I integrated NextAuth to provide secure and effortless sign-in with Google accounts"]
     },
     {
         id : 1,
         imgUrl : "/hc-main.png",
         heading : "Main Page",
-        messages : [ "- In main page , user can see his chats with his friends and saved-messages" , "- There are also menu icon and search icon in top-bar"]
+        messages : [ "In main page , user can see his chats with his friends and saved-messages" , "There are also menu icon and search icon in top-bar"]
     },
     {
         id : 2,
         imgUrl : "/hc-sidebar.png",
         heading : "In Side Bar",
-        messages : [ "- It offers simple UI to edit Profile , explore new friends and open Saved Messages" , "- Users can sign out in Settings" ]
+        messages : [ "It offers simple UI to edit Profile , explore new friends and open Saved Messages" , "Users can sign out in Settings" ]
     },
     {
         id : 3,
         imgUrl : "/hc-search.png",
         heading : "Search",
-        messages : [ "- It offers easily , simple and efficient interface for searching" , "- User can search both friends and messages at the same time"]
+        messages : [ "It offers easily , simple and efficient interface for searching" , "User can search both friends and messages at the same time"]
     },
     {
         id : 4,
         imgUrl : "/hc-message.png",
         heading : "In chat",
-        messages : [ "- Users can send messages , photos , emoji and voice" , "- Users can reply , copy , forward , edit and delete the messages" , "- And can also pin the messages to the top of the chat"]
+        messages : [ "Users can send messages , photos , emoji and voice" , "Users can reply , copy , forward , edit and delete the messages" , "And can also pin the messages to the top of the chat"]
     },
 ]
