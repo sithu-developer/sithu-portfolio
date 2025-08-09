@@ -20,63 +20,73 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                     <Typography sx={{ fontSize : "35px", fontWeight : 600 , background : "linear-gradient(to right, #dde1e4ff , #2196f3, #21cbf3 , white)" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >{projectDetailItems.id === 1 ? "Happy Chatting" : "Digital Voting"}</Typography>
                 </Box>
                 <Box sx={{ width : "100%" , height : "80%" , display : "flex" , justifyContent : "center" , alignItems : "center" , gap : "60px"}}>
-                    <Box sx={{ width : "600px" , height : "400px"}}>
-                        <Image  alt={"hc"} src={projectDetailItems.id === 1 ? "/happy-chatting3.png" : "/digital-voting-ph.png"} width={1000} height={1000} style={{  width : "100%" , height : "auto" , borderRadius : "5px" , transition : "all 0.4s" }} />
+                    <Box sx={{ width : "160px" , height : "300px"}}>
+                        <Image  alt={"hc"} src={"/hc-phone.png"} width={1000} height={1000} style={{  width : "auto" , height : "100%" , borderRadius : "5px" , transition : "all 0.4s" }} />
                     </Box>
                     <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
                         <Typography variant="h5">Happy Chatting</Typography>
-                        <Typography>- I developed a real-time messaging app,"Happy Chatting", using "Next.js"</Typography>
-                        <Typography>- It offers a simple, clean interface inspired by Telegram</Typography>
-                        <Typography variant="h6">Sign In</Typography>
-                        <Typography>- Users can sign in easily and securely with their Google account</Typography>
-                        <Typography>- I integrated "NextAuth" to provide secure and effortless sign-in with Google accounts</Typography>
+                        <Typography>- I developed a real-time messaging app,"Happy Chatting",</Typography>
+                        <Typography>- It offers a simple, clean and responsive interface, inspired by Telegram</Typography>
+                        <Typography>- I used Next.js , TypeScript , Material UI (MUI) , NextAuth.js , Prisma ORM , Redux Toolkit , PostgreSQL , Vercel and Aiven for PostgreSQL</Typography>
                     </Box>
                 </Box>
-                <Box sx={{ width : "100%" , height : "80%" , display : "flex" , justifyContent : "center" , alignItems : "center" , gap : "60px"}}>
-                    <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
-                        <Typography variant="h5">Main Page</Typography>
-                        <Typography>- In main page , user can see his chats with his friends and saved-messages</Typography>
-                        <Typography>- There are also menu icon and search icon in top-bar</Typography>
+                {projectDetailItems.id === 1 ? (happyChattingDetails.map(item => (
+                    <Box key={item.id} sx={{ width : "100%" , height : "80%" , display : "flex" , flexDirection : (item.id % 2 ? "row-reverse" : "row") , justifyContent : "center" , alignItems : "center" , gap : "60px"}}>
+                        <Box sx={{ width : "600px" , height : "400px"}}>
+                            <Image  alt={"happy-chatting-detail-img"} src={item.imgUrl} width={1000} height={1000} style={{  width : "100%" , height : "auto" , borderRadius : "5px" , transition : "all 0.4s" }} />
+                        </Box>
+                        <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
+                            <Typography variant="h5">{item.heading}</Typography>
+                            {item.messages.map(mess => (
+                                <Typography key={mess}>{mess}</Typography>
+                            ))}
+                        </Box>
                     </Box>
-                    <Box sx={{ width : "600px" , height : "400px"}}>
-                        <Image  alt={"hc"} src={projectDetailItems.id === 1 ? "/hc-main.png" : "/digital-voting-ph.png"} width={1000} height={1000} style={{  width : "100%" , height : "auto" , borderRadius : "5px" , transition : "all 0.4s" }} />
-                    </Box>
-                </Box>
-                <Box sx={{ width : "100%" , height : "80%" , display : "flex" , justifyContent : "center" , alignItems : "center" , gap : "60px"}}>
-                    <Box sx={{ width : "600px" , height : "400px"}}>
-                        <Image  alt={"hc"} src={projectDetailItems.id === 1 ? "/hc-sidebar.png" : "/digital-voting-ph.png"} width={1000} height={1000} style={{  width : "100%" , height : "auto" , borderRadius : "5px" , transition : "all 0.4s" }} />
-                    </Box>
-                    <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
-                        <Typography variant="h5">In Side Bar</Typography>
-                        <Typography>- It offers simple UI to edit Profile , explore new friends and open Saved Messages</Typography>
-                        <Typography>- Users can sign out in Settings</Typography>
-                    </Box>
-                </Box>
-                <Box sx={{ width : "100%" , height : "80%" , display : "flex" , justifyContent : "center" , alignItems : "center" , gap : "60px"}}>
-                    
-                    <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
-                        <Typography variant="h5">Search</Typography>
-                        <Typography>- It offers easily , simple and efficient interface for searching</Typography>
-                        <Typography>- User can search both friends and messages at the same time</Typography>
-                    </Box>
-                    <Box sx={{ width : "600px" , height : "400px"}}>
-                        <Image  alt={"hc"} src={projectDetailItems.id === 1 ? "/hc-search.png" : "/digital-voting-ph.png"} width={1000} height={1000} style={{  width : "100%" , height : "auto" , borderRadius : "5px" , transition : "all 0.4s" }} />
-                    </Box>
-                </Box>
-                <Box sx={{ width : "100%" , height : "80%" , display : "flex" , justifyContent : "center" , alignItems : "center" , gap : "60px"}}>
-                    <Box sx={{ width : "600px" , height : "400px"}}>
-                        <Image  alt={"hc"} src={projectDetailItems.id === 1 ? "/hc-message.png" : "/digital-voting-ph.png"} width={1000} height={1000} style={{  width : "100%" , height : "auto" , borderRadius : "5px" , transition : "all 0.4s" }} />
-                    </Box>
-                    <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
-                        <Typography variant="h5">In chat</Typography>
-                        <Typography>- Users can send messages , photos , emoji and voice </Typography>
-                        <Typography>- Users can reply , copy , forward , edit and delete the messages</Typography>
-                        <Typography>- And can also pin the messages to the top of the chat</Typography>
-                    </Box>
-                </Box>
+                )))
+                : undefined}
             </DialogContent>
         </Dialog>
     )
 }
 
 export default ProjectDetail;
+
+interface happyChattingType {
+    id : number,
+    imgUrl : string,
+    heading : string,
+    messages : string[]
+}
+
+const happyChattingDetails : happyChattingType[] = [
+    {
+        id : 0,
+        imgUrl : "/happy-chatting3.png",
+        heading : "Sign In",
+        messages : [ "- Users can sign in easily and securely with their Google account" , "- I integrated NextAuth to provide secure and effortless sign-in with Google accounts"]
+    },
+    {
+        id : 1,
+        imgUrl : "/hc-main.png",
+        heading : "Main Page",
+        messages : [ "- In main page , user can see his chats with his friends and saved-messages" , "- There are also menu icon and search icon in top-bar"]
+    },
+    {
+        id : 2,
+        imgUrl : "/hc-sidebar.png",
+        heading : "In Side Bar",
+        messages : [ "- It offers simple UI to edit Profile , explore new friends and open Saved Messages" , "- Users can sign out in Settings" ]
+    },
+    {
+        id : 3,
+        imgUrl : "/hc-search.png",
+        heading : "Search",
+        messages : [ "- It offers easily , simple and efficient interface for searching" , "- User can search both friends and messages at the same time"]
+    },
+    {
+        id : 4,
+        imgUrl : "/hc-message.png",
+        heading : "In chat",
+        messages : [ "- Users can send messages , photos , emoji and voice" , "- Users can reply , copy , forward , edit and delete the messages" , "- And can also pin the messages to the top of the chat"]
+    },
+]
