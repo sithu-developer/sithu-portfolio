@@ -13,7 +13,6 @@ const About = () => {
 
   useEffect(() => {
     if(!setJopIndex) return;
-    console.log("hello")
     const interval = setInterval(() => {
       setJopIndex((prev) => (prev + 1) % jops.length)
       setHideLetterClassName("hide-letter")

@@ -71,9 +71,9 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                         <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
                             <Typography variant="h4" sx={{ color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Typography>
                             {item.messages.map(mess => (
-                                <Box sx={{ display : "flex" , alignItems : "center" , gap : "10px"}}>
+                                <Box key={mess} sx={{ display : "flex" , alignItems : "center" , gap : "10px"}}>
                                     <CircleIcon sx={{ fontSize : 8  }} />
-                                    <Typography key={mess}>{mess}</Typography>
+                                    <Typography>{mess}</Typography>
                                 </Box>
                             ))}
                         </Box>

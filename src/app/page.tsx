@@ -1,6 +1,7 @@
 
 import About from "@/components/About";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 import TopBar from "@/components/TopBar";
 import { Box } from "@mui/material";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <TopBar />
       <About />
       <Projects />
+      <Skills />
     </Box>
   );
 }
