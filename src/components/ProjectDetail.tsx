@@ -97,7 +97,7 @@ interface happyChattingType {
 const happyChattingDetails : happyChattingType[] = [
     {
         id : 0,
-        imgUrl : "/happy-chatting3.png",
+        imgUrl : "/happy-chatting-laptop.png",
         heading : "Sign In",
         messages : [ "Users can sign in easily and securely with their Google account" , "I integrated NextAuth to provide secure and effortless sign-in with Google accounts"]
     },
