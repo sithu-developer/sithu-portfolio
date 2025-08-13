@@ -7,9 +7,9 @@ import "@/style/top.css"
 const TopBar = () => {
     return (
         <Box sx={{ display : "flex" , justifyContent : "space-between", alignItems : "center" , p : "10px 100px" , width : "100vw" , position : "fixed" , top : 0  , zIndex : 100  , backgroundColor: "rgba(64, 60, 60, 0.1)", backdropFilter :  "blur(10px)", }}>
-            <Box sx={{ display : "flex" , gap : "5px" , cursor : "pointer" , userSelect : "none" , transition : "all 0.2s ease" , ":hover" : { scale : 1.05}}}>
-                <Typography sx={{ fontSize : "35px" , color : "text.primary" , fontWeight : 700}} >Sithu</Typography>
-                <Typography sx={{ fontSize : "35px" , color : "secondary.main" , fontWeight : 700 , textShadow : "0 0 10px #2c89fcff"}} >Naing</Typography>
+            <Box sx={{ display : "flex" , cursor : "pointer" , userSelect : "none" , transition : "all 0.2s ease" , ":hover" : { scale : 1.05}}}>
+                <Typography sx={{ fontSize : "35px" , color : "text.primary" , fontWeight : 700}} >Port</Typography>
+                <Typography sx={{ fontSize : "35px" , color : "secondary.main" , fontWeight : 700 , textShadow : "0 0 10px #2c89fcff"}} >folio</Typography>
             </Box>
             <Box sx={{ display : "flex" , gap : "40px"}}>
                 {topItems.map(item => (

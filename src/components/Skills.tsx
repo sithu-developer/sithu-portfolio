@@ -29,11 +29,11 @@ const Skills = () => {
 
     return (
         <Box sx={{ width : "100vw" , height : "100vh" , display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center"  , pt : "95px" , gap : "10px" }}>
-            <Typography variant="h4" sx={{ color : "white" , fontWeight : 600}}>My Skills</Typography>
+            <Typography variant="h4" sx={{ color : "white" , fontWeight : 600  }}>My <Box component={"span"} sx={{  background : "linear-gradient(to right , #2196f3, #21cbf3 , #dde1e4ff )" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >Skills</Box></Typography>
             <Box sx={{ display : "flex" , gap : "10px"}}>{categorieItems.map(item => (
                 <Chip key={item.id} clickable onClick={() => setSelectedCategoryId(item.id)} label={item.name} sx={{ bgcolor : (item.id === selectedCategoryId ? "secondary.main" : "") , ":hover" : { bgcolor : "secondary.dark"}}} />
             ))}</Box>
-            <Box ref={skillBoxRef} sx={{ width : "96%" , maxHeight : "calc(100vh - 200px )" , overflowY : "auto" , display : "grid" , gridTemplateColumns : {  xs: "repeat(1, 1fr)", sm: "repeat(2, 1fr)" , md : "repeat(3, 1fr)", lg: "repeat(4, 1fr)" } , gap : "15px" , p : "10px"}}>
+            <Box ref={skillBoxRef} sx={{ width : "96%" , maxHeight : "calc(100vh - 200px )" , overflowY : "auto" , overflowX : "auto" , display : "grid" , gridTemplateColumns : {  xs: "repeat(1, 1fr)", sm: "repeat(2, 1fr)" , md : "repeat(3, 1fr)", lg: "repeat(4, 1fr)" } , gap : "15px" , p : "10px"}}>
                 {skillItems.filter(skill => (skill.categoryId === selectedCategoryId) || (selectedCategoryId === 1)).map(item => (
                     <Box sx={{ width : "350px" , p : "5px 10px" , borderRadius : "5px" , backgroundColor: "rgba(133, 129, 129, 0.1)", backdropFilter :  "blur(10px)",}} key={item.id} >
                         <Box sx={{height : "35px" , width : "fit-content" , display : "flex" , justifyContent : "center" , alignItems : 'center' , gap : "10px"}}>
@@ -60,7 +60,6 @@ const Skills = () => {
                     </Box>
                 ))}
             </Box>
-
         </Box>
     )
 }
@@ -205,6 +204,14 @@ const skillItems : SkillItemType[] = [
         name : "Git Hub",
         percentageToLearn : 5,
         width : 30,
+        categoryId : 4
+    },
+    {
+        id : 13,
+        iconUrl : "/figma-icon.svg",
+        name : "Figma",
+        percentageToLearn : 19,
+        width : 20,
         categoryId : 4
     },
 ]

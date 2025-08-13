@@ -35,7 +35,7 @@ const Projects = () => {
 
   return (
     <Box sx={{ width: "100vw", height: "100vh", display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center" , gap : "70px", pt : "95px" }}>
-      <Typography variant="h4" sx={{ fontWeight : 600 , background : "linear-gradient(to right, #dde1e4ff , #2196f3, #21cbf3 , white)" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent"}}>My Projects</Typography>
+      <Typography variant="h4" sx={{ color : "white" , fontWeight : 600  }}>My <Box component={"span"} sx={{  background : "linear-gradient(to right , #2196f3, #21cbf3 , #dde1e4ff )" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >Projects</Box></Typography>
       <Box
         ref={boxRef}
         sx={{  display : "flex" , justifyContent : "center" , alignItems : "center", width : "100%" , gap : "30px" }}
