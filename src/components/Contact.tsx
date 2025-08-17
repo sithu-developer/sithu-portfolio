@@ -7,17 +7,19 @@ import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
 import { SvgIconComponent } from "@mui/icons-material";
 import { useState } from "react";
-
+import TelegramIcon from '@mui/icons-material/Telegram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Contact = () => {
     const [ copiedIds , setCopiedIds ] = useState<number[]>([]);
 
     return (
-        <Box sx={{ width : "100vw" , height : "100vh" , display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center"  , pt : "95px" , gap : "20px" }}>
+        <Box sx={{ width : "100vw" , minHeight : "100vh" , display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center"  , pt : "95px" , gap : "20px" }}>
             <Typography variant="h4" sx={{ color : "white" , fontWeight : 600  }}>Get In <Box component={"span"} sx={{  background : "linear-gradient(to right , #2196f3, #21cbf3 , #dde1e4ff )" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >Touch</Box></Typography>
-            <Typography sx={{ color : "text.primary"}}>Something here , Lorem ipsum dolor sit amet consectetur adipisicing elit</Typography>
-            <Box sx={{ display : "flex" , gap : "80px"}}>
-                <Box sx={{ display : "flex" , flexDirection : 'column' , gap : "20px"}}>
+            <Typography sx={{ color : "text.primary" , textAlign : "center"}}>Something here , Lorem ipsum dolor sit amet consectetur adipisicing elit</Typography>
+            <Box sx={{ display : "flex" , flexDirection : { xs : "column" , sm : "row" } , gap : "80px"}}>
+                <Box sx={{ display : "flex" , flexDirection : 'column' , gap : "20px" }}>
                     <Typography variant="h5" sx={{ color : "text.primary" , fontWeight : 600 , textAlign : "center" }} >Contact Information</Typography>
                     {contactItems.map(item => (
                         <Box key={item.id} sx={{ display : "flex" , justifyContent : "space-between" , alignItems : "center" , gap : "10px" , backgroundColor: "rgba(19, 17, 17, 0.1)", backdropFilter :  "blur(10px)" , p : "5px 10px" , borderRadius : "10px"}}>
@@ -44,8 +46,22 @@ const Contact = () => {
                             }
                         </Box>
                     ))}
+                    <Box>
+                        <Typography sx={{ color : "#21cbf3" , textAlign : "center" , mt : "20px" , fontWeight : 500 }} >Connect With Me</Typography>
+                        <Box sx={{ display : "flex" , alignItems : "center" , justifyContent : "center" , gap : "10px"}}>
+                            <IconButton component={"a"} target="_blank" rel="noopener noreferrer" href="https://t.me/SithuNaing8209" >
+                                <TelegramIcon sx={{ color : "#21cbf3" , transition : "all ease" , ":hover" : { transform : "translateY(-3px)" , scale : 1.2} }}  />
+                            </IconButton>
+                            <IconButton component="a" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/share/1YvXsd74nr/"  >
+                                <FacebookIcon sx={{ color : "#21cbf3" , transition : "all ease" , ":hover" : { transform : "translateY(-3px)" , scale : 1.2} }} />
+                            </IconButton>
+                            <IconButton component="a" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/sithunaing8209?igsh=cjkwd2QybGtha210" >
+                                <InstagramIcon sx={{ color : "#21cbf3" , transition : "all ease" , ":hover" : { transform : "translateY(-3px)" , scale : 1.2} }} />
+                            </IconButton>
+                        </Box>
+                    </Box>
                 </Box>
-                <Box sx={{ display : "flex" , flexDirection : "column" , gap : "15px" , alignItems : "center" , width : "400px"  , p : "20px" , borderRadius : "10px" , bgcolor : "rgba(115, 139, 149, 0.1)" , backdropFilter : "blur(10px)"}}>
+                <Box sx={{ display : "flex" , flexDirection : "column" , gap : "15px" , alignItems : "center" , width : { xs : "100vw" , sm : "400px"}  , p : "20px" , borderRadius : "10px" , bgcolor : "rgba(115, 139, 149, 0.1)" , backdropFilter : "blur(10px)"}}>
                     <Typography variant="h5" sx={{ color : "text.primary" , fontWeight : 600 , textAlign : "center" }} >Send a Message</Typography>
                     <TextField label="Your name" color="info"
                         slotProps={{
@@ -92,7 +108,7 @@ const Contact = () => {
                             width : "90%"
                         }}
                     />
-                    <Button variant="contained" sx={{ bgcolor : "#21cbf3" , color : "black" , textTransform : "none"}} >Send Message</Button>
+                    <Button variant="contained" sx={{ bgcolor : "#21cbf3" , color : "black" , textTransform : "none" , width : "calc(100% - 35px)"}} >Send Message</Button>
                 </Box>
             </Box>
         </Box>

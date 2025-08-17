@@ -1,31 +1,10 @@
-/* .bb {
-    animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 0 cover 50%;
-    width: 200px;
-    height: 200px;
-    background: blue;
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        scale: 0.5;
-    }
-    to {
-        opacity: 1;
-        scale: 1;
-    }
-        sx={{, ":hover" : { scale : 1.5 , border : "3px solid #2c89fcff" } }}
-    sx={{ display : "flex" , justifyContent : 'center' , alignItems : "center" , width : "380px" , height : "250px" , overflow : "hidden" , borderRadius : "5px" , cursor : "pointer" , transition : "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)" , ":hover" : { scale : 1.5 , border : "3px solid #2c89fcff" } }}
-} */
 
 .project-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 380px;
-    height: 250px;
+    width: 350px;
+    height: 220px;
     border-radius: 5px;
     cursor: pointer;
 }

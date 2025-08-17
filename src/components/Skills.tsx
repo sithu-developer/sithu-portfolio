@@ -33,7 +33,7 @@ const Skills = () => {
             <Box sx={{ display : "flex" , gap : "10px"}}>{categorieItems.map(item => (
                 <Chip key={item.id} clickable onClick={() => setSelectedCategoryId(item.id)} label={item.name} sx={{ bgcolor : (item.id === selectedCategoryId ? "secondary.main" : "") , ":hover" : { bgcolor : "secondary.dark"}}} />
             ))}</Box>
-            <Box ref={skillBoxRef} sx={{ width : "96%" , maxHeight : "calc(100vh - 200px )" , overflowY : "auto" , overflowX : "auto" , display : "grid" , gridTemplateColumns : {  xs: "repeat(1, 1fr)", sm: "repeat(2, 1fr)" , md : "repeat(3, 1fr)", lg: "repeat(4, 1fr)" } , gap : "15px" , p : "10px"}}>
+            <Box ref={skillBoxRef} sx={{ width : { xs : "380px" , sm : "96%"} , maxHeight : "calc(100vh - 200px )" , overflowY : "auto" , overflowX : "auto" , display : "grid" , gridTemplateColumns : {  xs: "repeat(1, 1fr)", sm: "repeat(2, 1fr)" , md : "repeat(3, 1fr)", lg: "repeat(4, 1fr)" } , gap : "15px" , p : "10px"}}>
                 {skillItems.filter(skill => (skill.categoryId === selectedCategoryId) || (selectedCategoryId === 1)).map(item => (
                     <Box sx={{ width : "350px" , p : "5px 10px" , borderRadius : "5px" , backgroundColor: "rgba(133, 129, 129, 0.1)", backdropFilter :  "blur(10px)",}} key={item.id} >
                         <Box sx={{height : "35px" , width : "fit-content" , display : "flex" , justifyContent : "center" , alignItems : 'center' , gap : "10px"}}>
