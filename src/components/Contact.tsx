@@ -16,11 +16,11 @@ const Contact = () => {
 
     return (
         <Box sx={{ width : "100vw" , minHeight : "100vh" , display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center"  , pt : "95px" , gap : "20px" }}>
-            <Typography variant="h4" sx={{ color : "white" , fontWeight : 600  }}>Get In <Box component={"span"} sx={{  background : "linear-gradient(to right , #2196f3, #21cbf3 , #dde1e4ff )" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >Touch</Box></Typography>
-            <Typography sx={{ color : "text.primary" , textAlign : "center"}}>Something here , Lorem ipsum dolor sit amet consectetur adipisicing elit</Typography>
+            <Typography sx={{fontSize : { xs : "30px" , sm : "35px" } ,  color : "white" , fontWeight : 600  }}>Get In <Box component={"span"} sx={{  background : "linear-gradient(to right , #2196f3, #21cbf3 , #dde1e4ff )" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >Touch</Box></Typography>
+            <Typography sx={{ color : "text.primary" , textAlign : "center" , px : "10px"}}>Have an idea? Let's turn your vision into reality. I'm always excited to discuss new projects.</Typography>
             <Box sx={{ display : "flex" , flexDirection : { xs : "column" , sm : "row" } , gap : "80px"}}>
                 <Box sx={{ display : "flex" , flexDirection : 'column' , gap : "20px" }}>
-                    <Typography variant="h5" sx={{ color : "text.primary" , fontWeight : 600 , textAlign : "center" }} >Contact Information</Typography>
+                    <Typography variant="h5" sx={{ color : "#21cbf3" , fontWeight : 600 , textAlign : "center" }} >Contact Information</Typography>
                     {contactItems.map(item => (
                         <Box key={item.id} sx={{ display : "flex" , justifyContent : "space-between" , alignItems : "center" , gap : "10px" , backgroundColor: "rgba(19, 17, 17, 0.1)", backdropFilter :  "blur(10px)" , p : "5px 10px" , borderRadius : "10px"}}>
                             <Box sx={{ bgcolor : "#21cdf31e" , width : "35px" , height : "35px" , borderRadius : "20px" , display : "flex" , justifyContent : "center" , alignItems : "center" }}>
@@ -62,7 +62,7 @@ const Contact = () => {
                     </Box>
                 </Box>
                 <Box sx={{ display : "flex" , flexDirection : "column" , gap : "15px" , alignItems : "center" , width : { xs : "100vw" , sm : "400px"}  , p : "20px" , borderRadius : "10px" , bgcolor : "rgba(115, 139, 149, 0.1)" , backdropFilter : "blur(10px)"}}>
-                    <Typography variant="h5" sx={{ color : "text.primary" , fontWeight : 600 , textAlign : "center" }} >Send a Message</Typography>
+                    <Typography variant="h5" sx={{ color : "#21cbf3" , fontWeight : 600 , textAlign : "center" }} >Send a Message</Typography>
                     <TextField label="Your name" color="info"
                         slotProps={{
                             inputLabel: {

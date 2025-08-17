@@ -34,8 +34,8 @@ const Projects = () => {
   }, []);
 
   return (
-    <Box sx={{ width: "100vw", minHeight : "100vh", display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center" , gap : "70px", pt : "95px" }}>
-      <Typography variant="h4" sx={{ color : "white" , fontWeight : 600  }}>My <Box component={"span"} sx={{  background : "linear-gradient(to right , #2196f3, #21cbf3 , #dde1e4ff )" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >Projects</Box></Typography>
+    <Box sx={{ width: "100vw", minHeight : "100vh", display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center" , gap : { xs : "30px" , sm : "70px" } , pt : "95px" }}>
+      <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "white" , fontWeight : 600  }}>My <Box component={"span"} sx={{  background : "linear-gradient(to right , #2196f3, #21cbf3 , #dde1e4ff )" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >Projects</Box></Typography>
       <Box
         ref={boxRef}
         sx={{  display : "flex" , flexDirection : { xs : "column" , sm : "row"} , justifyContent : "center" , alignItems : "center", width : "100%" , gap : "30px" }}

@@ -15,18 +15,18 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
     return (
         <Dialog open={projectDetailItems.open} fullScreen >
             <DialogContent sx={{ backgroundImage : "url('/lp.png')" , backgroundRepeat : "no-repeat" , backgroundPosition : "center" , backgroundAttachment : "fixed" , backgroundSize : "cover"}}>
-                <Box  sx={{ display : "flex" , justifyContent : "start", alignItems : "center" , gap : "20px" , p : "10px 30px" , width : "100vw" , position : "fixed" , top : 0 , left : 0 , zIndex : 100  , backgroundColor: "rgba(64, 60, 60, 0.1)", backdropFilter :  "blur(10px)", }}>
+                <Box  sx={{ display : "flex" , justifyContent : "start", alignItems : "center" , gap : "20px" , py : "10px" , px : { xs : "10px" , sm : "30px"} , width : "100vw" , position : "fixed" , top : 0 , left : 0 , zIndex : 100  , backgroundColor: "rgba(64, 60, 60, 0.1)", backdropFilter :  "blur(10px)", }}>
                     <IconButton color="secondary" onClick={() => setProjectDetailItems({id : 0 , open : false})} >
                         <CloseRoundedIcon sx={{ color : "white"}} />
                     </IconButton>
-                    <Typography sx={{ fontSize : "35px", fontWeight : 600 , background : "linear-gradient(to right, #dde1e4ff , #2196f3, #21cbf3 , white)" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >{projectDetailItems.id === 1 ? "Happy Chatting" : "Digital Voting"}</Typography>
+                    <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" }, fontWeight : 600 , background : "linear-gradient(to right, #dde1e4ff , #2196f3, #21cbf3 , white)" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >{projectDetailItems.id === 1 ? "Happy Chatting" : "Digital Voting"}</Typography>
                 </Box>
-                <Box sx={{ width : "100%" , height : "80%" , display : "flex" , justifyContent : "center" , alignItems : "center" , gap : "60px"}}>
-                    <Box sx={{ width : "160px" , height : "300px"}}>
+                <Box sx={{ width : "100%" , minHeight : "80%" , display : "flex" , flexDirection : { xs : "column" , sm : "row"} , justifyContent : "center" , alignItems : "center" , gap : { xs : "20px" , sm :  "60px"} , pt : { xs : "50px" , sm : "0px"}}}>
+                    <Box sx={{ width : { xs : "100px" , sm : "160px"} , height : { xs : "200px" , sm : "300px" }}}>
                         <Image  alt={"hc"} src={"/hc-phone.png"} width={1000} height={1000} style={{  width : "auto" , height : "100%" , borderRadius : "5px" , transition : "all 0.4s" }} />
                     </Box>
-                    <Box sx={{ display : "flex" , flexDirection : "column" , gap : "30px" , width : "700px" }}>
-                        <Typography variant="h4" sx={{ color : "#00bcd4" , fontWeight : 600 }}>Happy Chatting</Typography>
+                    <Box sx={{ display : "flex" , flexDirection : "column" , gap : { xs : "10px" , sm : "30px" } , width : { xs : "340px" , sm : "700px"} }}>
+                        <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "#00bcd4" , fontWeight : 600 , textAlign : { xs : "center" , sm : "start" } }}>Happy Chatting</Typography>
                         <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px"}}>
                             <Typography sx={{ fontSize : "17px"}}>A real-time messaging app built for simple, seamless conversations</Typography>
                             <Box sx={{ display : "flex" , gap : "10px" }}>
@@ -51,12 +51,12 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                                 </Typography>
                             </Box>
                         </Box>
-                        <Box sx={{ display : "flex" , alignItems : "center" , gap : "15px" }}>
-                            <Button component="a" href="https://chatting-rust.vercel.app" target="_blank" rel="noopener noreferrer" variant="outlined" sx={{ display :"flex" , alignItems : "center" , gap : "10px" , textTransform : "none" , boxShadow : "3px 3px 5px #2BCFFC"}}>
+                        <Box sx={{ display : "flex" , alignItems : "center" , gap : "15px" , mt : { xs : "10px" , sm : "0px"} }}>
+                            <Button component="a" href="https://chatting-rust.vercel.app" target="_blank" rel="noopener noreferrer" variant="outlined" sx={{ display :"flex" , alignItems : "center" , gap : "10px" , textTransform : "none" , boxShadow : "0px 0px 5px #2BCFFC" , transition : "all ease" , ":hover" : { boxShadow : "3px 3px 5px #2BCFFC"} }}>
                                 <OpenInNewRoundedIcon sx={{ color : "#2BCFFC" , fontSize : "30px"}} />
                                 <Typography sx={{ color : "#2BCFFC"}} >Live Demo</Typography>
                             </Button>
-                            <Button component="a" href="https://github.com/sithu-developer/chatting.git" target="_blank" rel="noopener noreferrer" variant="outlined" sx={{ display :"flex" , alignItems : "center" , gap : "10px" , textTransform : "none" , boxShadow : "3px 3px 5px #2BCFFC"}}>
+                            <Button component="a" href="https://github.com/sithu-developer/chatting.git" target="_blank" rel="noopener noreferrer" variant="outlined" sx={{ display :"flex" , alignItems : "center" , gap : "10px" , textTransform : "none" , boxShadow : "0px 0px 5px #2BCFFC" , transition : "all ease" , ":hover" : { boxShadow : "3px 3px 5px #2BCFFC"} }}>
                                 <Image alt="github icon" src={"/github-icon.svg"} width={500} height={500} style={{ width : "30px" , height : "auto" }} />
                                 <Typography sx={{ color : "#2BCFFC"  }} >Code</Typography>
                             </Button>
@@ -64,12 +64,12 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                     </Box>
                 </Box>
                 {projectDetailItems.id === 1 ? (happyChattingDetails.map(item => (
-                    <Box key={item.id} sx={{ width : "100%" , height : "80%" , display : "flex" , flexDirection : (item.id % 2 ? "row" : "row-reverse") , justifyContent : "center" , alignItems : "center" , gap : "60px"}}>
-                        <Box sx={{ width : "600px" , height : "400px"}}>
+                    <Box key={item.id} sx={{ width : "100%"  , minHeight : "80%" , display : "flex" , flexDirection : { xs : "column" , sm : (item.id % 2 ? "row" : "row-reverse") } , justifyContent : "center" , alignItems : "center" , gap : { xs : "30px" , sm : "60px" }}}>
+                        <Box sx={{ width : { xs : "350px" , sm : "600px" } , height : { xs : "220px" , sm : "400px" }}}>
                             <Image  alt={"happy-chatting-detail-img"} src={item.imgUrl} width={1000} height={1000} style={{  width : "100%" , height : "auto" , borderRadius : "5px" , transition : "all 0.4s" }} />
                         </Box>
                         <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
-                            <Typography variant="h4" sx={{ color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Typography>
+                            <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Typography>
                             {item.messages.map(mess => (
                                 <Box key={mess} sx={{ display : "flex" , alignItems : "center" , gap : "10px"}}>
                                     <CircleIcon sx={{ fontSize : 8  }} />
