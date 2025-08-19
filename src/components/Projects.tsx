@@ -69,7 +69,7 @@ const projects : ProjectType[] = [
   },
   {
     id : 2 ,
-    name : "Happy Chatting",
-    url : "/happy-chatting.png"
+    name : "Digital Voting",
+    url : "/digital-voting.png"
   }
 ]
