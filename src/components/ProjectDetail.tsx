@@ -71,8 +71,8 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                         <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
                             <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Typography>
                             {item.messages.map(mess => (
-                                <Box key={mess} sx={{ display : "flex" , alignItems : "center" , gap : "10px"}}>
-                                    <CircleIcon sx={{ fontSize : 8  }} />
+                                <Box key={mess} sx={{ display : "flex" , gap : "10px"}}>
+                                    <CircleIcon sx={{ fontSize : 8 , mt : "9px" }} />
                                     <Typography>{mess}</Typography>
                                 </Box>
                             ))}
@@ -83,7 +83,7 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                     <Box key={item.id} sx={{ width : "100%"  , minHeight : "80%" , display : "flex" , flexDirection : { xs : "column" , sm : (item.id % 2 ? "row-reverse" : "row") } , justifyContent : "center" , alignItems : "center" , gap : { xs : "30px" , sm : "60px" }}}>
                         <Box sx={{ display : "flex" , gap : "10px"}}>
                             {item.imgUrls.map(url => (
-                                <Box key={url} sx={{ width : { xs : "105px" , sm : "185px"} , height : { xs : "200px" , sm : "350px" } , bgcolor : "black"}}>
+                                <Box key={url} sx={{ width : { xs : "105px" , sm : "185px"} , height : { xs : "200px" , sm : "350px" } }}>
                                     <Image  alt={"digital-voting-detail-img"} src={url} width={1000} height={1000} style={{  width : "auto" , height : "100%" , borderRadius : "5px" }} />
                                 </Box>
                             ))}
@@ -91,8 +91,8 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                         <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" }}>
                             <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Typography>
                             {item.messages.map(mess => (
-                                <Box key={mess} sx={{ display : "flex" , alignItems : "center" , gap : "10px"}}>
-                                    <CircleIcon sx={{ fontSize : 8  }} />
+                                <Box key={mess} sx={{ display : "flex" , gap : "10px"}}>
+                                    <CircleIcon sx={{ fontSize : 8 , mt : "9px" }}  />
                                     <Typography>{mess}</Typography>
                                 </Box>
                             ))}
@@ -158,15 +158,15 @@ const digitalVotingDetails : DigitalVotingDetailType[] = [
     {
         id : 1,
         heading : "Admin Sign Up",
-        imgUrls : [ "/digital-voting-sign-in.png" , "/digital-voting-admin-sign.png" ],
-        messages : [ "Authentication is running with Google" ,  "To sign up your gmail as an admin , you need to know the Admin code" , "The number of admin accounts is also limited" , "Admin code and limit can be changed by Admin in setting" ]
+        imgUrls : [ "/digital-voting-sign-in.png" , "/digital-voting-admin-sign.png" , "/king-queen-page.png"  ],
+        messages : [ "Authentication is running with Google" ,  "To sign up your gmail as an admin , you need to know the Admin code" , "The number of admin accounts is also limited" , "Admin code and limit can be changed by Admin in setting" , "When you have done signing up as an admin , you will reach to the third photo " ]
     },
-    // {
-    //     id : 2,
-    //     heading : "",
-    //     imgUrl : [],
-    //     messages : [ ]
-    // },
+    {
+        id : 2,
+        heading : "Categories CRUD",
+        imgUrls : [ "/category-create.png" , "/category-update.png" , "/category-delete.png" ],
+        messages : [ "In this page, an admin can create new category like 'Miss' in photo with crown-logo photo" , "In the second photo, you can rename only category's name or change photo, or both" , "The third photo shows deleting  category, but it can be done with the correct admin code" ]
+    },
     // {
     //     id : 3,
     //     heading : "",
