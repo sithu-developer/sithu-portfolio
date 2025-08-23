@@ -188,15 +188,46 @@ const digitalVotingDetails : DigitalVotingDetailType[] = [
     },
     {
         id : 6,
-        heading : "Setting",
+        heading : "Admin Settings",
         imgUrls : [ "/setting-page.png" , "/setting-admin-code.png" , "/setting-major-code.png"],
-        messages : [ "The final icon on the sidebar will take to the setting page" , "In this page, the admin code and the number of administrator accounts can be changed" , "Additionally, this page allows you to create, update, or delete major codes for voters" , "To close voting from voters , simply press the \"Close Voting\" button" , "For security, all of these actions require a valid admin code to be entered before they can be executed" , "To sign out of the administrator account, simply press the sign-out button"]
+        messages : [ "The final icon on the sidebar will take to the settings page" , "In this page, the admin code and the number of administrator accounts can be changed" , "Additionally, this page allows you to create, update, or delete major codes for voters" , "To close voting from voters , simply press the \"Close Voting\" button" , "For security, all of these actions require a valid admin code to be entered before they can be executed" , "To sign out of the administrator account, simply press the sign-out button"]
+    },
+    {
+        id : 7,
+        heading : "Voter Sign Up",
+        imgUrls : [ "/voter-sign.png" , "/voter-voting-page.png" ],
+        messages : [ "Like in Admin sign-up, a voter can sign up with google with major code" , "To ensure fair voting, the number of voters is limited for each major" , "The major code and the maximum number of voter accounts can also be modified by an admin in the settings" , "After a user successfully signs up as a voter, they will be automatically redirected to the voting page" ]
+    },
+    {
+        id : 8,
+        heading : "Voting Page",
+        imgUrls : [ "/voter-vote.png" , "/voter-revote.png"],
+        messages : [ "On the voting page, voters can easily cast their vote for each contestant across different categories" , "If a voter changes their mind, the system allows them to re-vote for a different contestant" ]
+    },
+    {
+        id : 9,
+        heading : "Thanks For Voting Page",
+        imgUrls : [ "/voter-thank.png" , "/voter-thank-revote.png" , "/voter-thank-submited.png"],
+        messages : [ "Once they've completed voting for all categories,  voters will be automatically directed to the thank-for-voting page" , "Here, voters can review their selections and re-vote until they submit their final choices" ]
+    },
+    {
+        id : 10,
+        heading : "Voter Settings",
+        imgUrls : [ "/voter-setting.png" , "/voter-rename.png" , "/voter-agenda.png"],
+        messages : [ "To access their Settings, voters must press the settings icon located in the top-left corner of the page" , " Within these settings, they have the ability to rename their profile and view the event agenda" , "They can also sign out from here" ]
+    },
+    {
+        id : 11,
+        heading : "Result Page",
+        imgUrls : [ "/voter-closed-voting.png" , "/voter-show-results.png" , "/voter-announced.png"],
+        messages : [ "When an administrator closes the vote from the Admin Settings page, all voters are automatically redirected to the Results page" , " For security, they can't return to previous pages or cast any more votes" , "When an administrator reveals the winners from their side, the results will appear instantly on the Voters' Results page, showing the winner for each category"]
     },
     // {
-    //     id : 7,
+    //     id : 12,
     //     heading : "",
     //     imgUrls : [ "/" , "/" , "/"],
     //     messages : [ ]
     // },
+    
     
 ]
