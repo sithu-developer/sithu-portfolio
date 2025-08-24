@@ -40,12 +40,15 @@ const About = () => {
                 <Typography sx={{ textAlign : "justify" , color : "#cfccccff" }} >I love turning complex problems into elegant solutions. As a Next.js full-stack developer, I enjoy the entire development lifecycle - from architecting data models to deploying serverless functions and creating intuitive front-end interfaces.  I'm always looking for new challenges that allow me to grow my skills and contribute to meaningful projects.</Typography>
             </Box>
           </Slide>
+          <Slide in direction="left" timeout={{ enter : 800 }} >
           <Box className="profile-container" >
             <Box  className="profile-wrapper" sx={{ width : "350px" , height : "350px"}} >
                 <Image className="profile-img" alt="Sithu Naing's photo" src={"/sithu-photo3.png"} width={1000} height={1000} style={{ width : "350px" , height : "auto"}}  />
                 {/* <Box className="glow-effect"></Box> */}
             </Box>
           </Box>
+          </Slide>
+
         </Box>
     )
 }

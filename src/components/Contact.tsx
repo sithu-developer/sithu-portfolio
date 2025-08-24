@@ -1,5 +1,5 @@
 "use client"
-import { Box, Button, IconButton, TextField, Typography } from "@mui/material"
+import { Alert, Box, Button, CircularProgress, IconButton, Snackbar, TextField, Typography } from "@mui/material"
 import MailRoundedIcon from '@mui/icons-material/MailRounded';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
@@ -10,9 +10,41 @@ import { useState } from "react";
 import TelegramIcon from '@mui/icons-material/Telegram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import emailjs from "@emailjs/browser";
+
+interface SendMessageType {
+    name : string
+    email : string
+    message : string
+    subject : string
+    [key: string]: string;
+}
+
+const defaultSendMessage : SendMessageType = { subject : "Portfolio Message" , email : "" , message : "" , name : "" };
 
 const Contact = () => {
     const [ copiedIds , setCopiedIds ] = useState<number[]>([]);
+    const [ sendMessageObject , setSendMessageObject ] = useState<SendMessageType>(defaultSendMessage);
+    const [ isSending , setIsSending ] = useState<boolean>(false);
+    const [ openSnackBar , setOpenSnackBar ] = useState<boolean>(false);
+
+    const handleSendMessage = async(e : React.FormEvent) => {
+        e.preventDefault();
+        setIsSending(true);
+        try {
+            await emailjs.send( 
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "" ,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "" , 
+                sendMessageObject , 
+                process.env.NEXT_PUBLIC_EMAILJS_USER_ID 
+            )
+            setIsSending(false)
+            setSendMessageObject(defaultSendMessage);
+            setOpenSnackBar(true);
+        } catch (err) {
+            console.error(err)
+        }
+    }
 
     return (
         <Box id="contact" sx={{ width : "100vw" , minHeight : "100vh" , display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center"  , pt : "95px" , gap : "20px" }}>
@@ -64,6 +96,8 @@ const Contact = () => {
                 <Box sx={{ display : "flex" , flexDirection : "column" , gap : "15px" , alignItems : "center" , width : { xs : "100vw" , sm : "400px"}  , p : "20px" , borderRadius : "10px" , bgcolor : "rgba(115, 139, 149, 0.1)" , backdropFilter : "blur(10px)"}}>
                     <Typography variant="h5" sx={{ color : "#21cbf3" , fontWeight : 600 , textAlign : "center" }} >Send a Message</Typography>
                     <TextField label="Your name" color="info"
+                        value={sendMessageObject.name}
+                        onChange={(e) => setSendMessageObject((prev) => ({...prev , name : e.target.value}))}
                         slotProps={{
                             inputLabel: {
                                 sx : { color: "lightblue" } // label color
@@ -78,7 +112,9 @@ const Contact = () => {
                             width : "90%"
                         }}
                     />
-                    <TextField label="Your Email" color="info"
+                    <TextField label="Your Email" color="info" type="email"
+                        value={sendMessageObject.email}
+                        onChange={(e) => setSendMessageObject((prev) => ({...prev , email : e.target.value}))}
                         slotProps={{
                             inputLabel: {
                                 sx : { color: "lightblue" } // label color
@@ -94,6 +130,8 @@ const Contact = () => {
                         }}
                     />
                     <TextField multiline rows={4} label="Your Message" color="info"
+                        value={sendMessageObject.message}
+                        onChange={(e) => setSendMessageObject((prev) => ({...prev , message : e.target.value}))}
                         slotProps={{
                             inputLabel: {
                                 sx : { color: "lightblue" } // label color
@@ -108,8 +146,28 @@ const Contact = () => {
                             width : "90%"
                         }}
                     />
-                    <Button variant="contained" sx={{ bgcolor : "#21cbf3" , color : "black" , textTransform : "none" , width : "calc(100% - 35px)"}} >Send Message</Button>
+                    
+                    {isSending ? 
+                    <CircularProgress />
+                    :<Button
+                        onClick={handleSendMessage}
+                        disabled={(!sendMessageObject.email || !sendMessageObject.message || !sendMessageObject.name) }
+                        variant="contained" 
+                        sx={{ bgcolor : "#21cbf3" , color : "black" , textTransform : "none" , width : "calc(100% - 35px)"}} 
+                    >Send Message</Button>
+                    }
                 </Box>
+                {/* <Snackbar message={""} open={true} /> */}
+                <Snackbar open={openSnackBar} autoHideDuration={6000} onClose={() => setOpenSnackBar(false)}>
+                    <Alert
+                        onClose={() => setOpenSnackBar(false)}
+                        severity="success"
+                        variant="filled"
+                        sx={{ width: '100%' }}
+                    >
+                        You successfully sent a message!
+                    </Alert>
+                </Snackbar>
             </Box>
         </Box>
     )
