@@ -15,7 +15,7 @@ const Contact = () => {
     const [ copiedIds , setCopiedIds ] = useState<number[]>([]);
 
     return (
-        <Box sx={{ width : "100vw" , minHeight : "100vh" , display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center"  , pt : "95px" , gap : "20px" }}>
+        <Box id="contact" sx={{ width : "100vw" , minHeight : "100vh" , display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center"  , pt : "95px" , gap : "20px" }}>
             <Typography sx={{fontSize : { xs : "30px" , sm : "35px" } ,  color : "white" , fontWeight : 600  }}>Get In <Box component={"span"} sx={{  background : "linear-gradient(to right , #2196f3, #21cbf3 , #dde1e4ff )" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >Touch</Box></Typography>
             <Typography sx={{ color : "text.primary" , textAlign : "center" , px : "10px"}}>Have an idea? Let's turn your vision into reality. I'm always excited to discuss new projects.</Typography>
             <Box sx={{ display : "flex" , flexDirection : { xs : "column" , sm : "row" } , gap : "80px"}}>

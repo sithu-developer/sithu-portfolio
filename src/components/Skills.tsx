@@ -28,7 +28,7 @@ const Skills = () => {
     } , [])
 
     return (
-        <Box sx={{ width : "100vw" , height : "100vh" , display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center"  , pt : "95px" , gap : "10px" }}>
+        <Box id="skill" sx={{ width : "100vw" , height : "100vh" , display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center"  , pt : "95px" , gap : "10px" }}>
             <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "white" , fontWeight : 600  }}>My <Box component={"span"} sx={{  background : "linear-gradient(to right , #2196f3, #21cbf3 , #dde1e4ff )" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >Skills</Box></Typography>
             <Box sx={{ display : "flex" , gap : "10px"}}>{categorieItems.map(item => (
                 <Chip key={item.id} clickable onClick={() => setSelectedCategoryId(item.id)} label={item.name} sx={{ bgcolor : (item.id === selectedCategoryId ? "secondary.main" : "") , ":hover" : { bgcolor : "secondary.dark"}}} />

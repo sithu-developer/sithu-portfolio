@@ -24,7 +24,7 @@ const About = () => {
   } , [ setJopIndex ])
 
     return (
-        <Box sx={{ display : "flex" , flexDirection : { xs : "column-reverse" , sm : "row"} , justifyContent : "center" , alignItems : "center" , gap : "60px" , width : "100vw" , minHeight : "100vh" , pt : { xs : "80px" , sm : "0px"} }}>
+        <Box id="about" sx={{ display : "flex" , flexDirection : { xs : "column-reverse" , md : "row"} , justifyContent : "center" , alignItems : "center" , gap : "60px" , width : "100vw" , minHeight : "100vh" , pt : { xs : "80px" , sm : "0px"} }}>
           <Slide in direction="right" timeout={{ enter : 800 }} >
             <Box sx={{ width : { xs : "330px" , sm : "550px"} }} >
                 <Typography  sx={{ textAlign : "start" , fontSize : { xs : "20px" , sm : "25px"} , lineHeight : 0.5 , fontWeight : 700 , color : "text.primary"}} >Hello! I'm </Typography>
