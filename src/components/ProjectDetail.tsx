@@ -21,7 +21,7 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                     </IconButton>
                     <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" }, fontWeight : 600 , background : "linear-gradient(to right, #dde1e4ff , #2196f3, #21cbf3 , white)" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >{projectDetailItems.id === 1 ? "Happy Chatting" : "Digital Voting System"}</Typography>
                 </Box>
-                <Box sx={{ width : "100%" , minHeight : { xs : "95%" , sm :  "80%" } , display : "flex" , flexDirection : { xs : "column" , sm : "row"} , justifyContent : "center" , alignItems : "center" , gap : { xs : "20px" , sm :  "60px"} }}>
+                <Box sx={{ width : "100%" , minHeight : { xs : "95%" , sm :  "80%" } , display : "flex" , flexDirection : { xs : "column" , sm : "row"} , justifyContent : "center" , alignItems : "center" , gap : { xs : "10px" , sm :  "60px"} , pt : { xs : "50px" , sm : "0px"} }}>
                     <Box sx={{ width : { xs : "100px" , sm : "160px"} , height : { xs : "200px" , sm : "300px" }}}>
                         <Image  alt={"hc"} src={(projectDetailItems.id === 1 ? "/hc-phone.png" : "/digital-voting-sign-in.png")} width={1000} height={1000} style={{  width : "auto" , height : "100%" , borderRadius : "5px"  }} />
                     </Box>
