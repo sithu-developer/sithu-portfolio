@@ -26,14 +26,14 @@ const About = () => {
     return (
         <Box id="about" sx={{ display : "flex" , flexDirection : { xs : "column-reverse" , md : "row"} , justifyContent : "center" , alignItems : "center" , gap : "60px" , width : "100vw" , minHeight : "100vh" , pt : { xs : "80px" , sm : "0px"} }}>
           <Slide in direction="right" timeout={{ enter : 800 }} >
-            <Box sx={{ width : { xs : "330px" , sm : "550px"} }} >
+            <Box sx={{ width : { xs : "340px" , sm : "550px"} }} >
                 <Typography  sx={{ textAlign : "start" , fontSize : { xs : "20px" , sm : "25px"} , lineHeight : 0.5 , fontWeight : 700 , color : "text.primary"}} >Hello! I&apos;m </Typography>
                 <Typography sx={{ fontSize : { xs : "30px" , sm : "48px"} , textAlign : "start" , fontWeight : 700, lineHeight : 1.4 , width : "fit-content" , background : "linear-gradient(to right, #dde1e4ff , #2196f3, #21cbf3 , white)" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent"}} >Si Thu Naing</Typography>
                 <Box sx={{ display : "flex"}}>
-                  <Typography sx={{ textAlign : "start" , fontSize : { xs : "22px" , sm : "28px"} , height : "45px", fontWeight : 700, color : "text.primary" }} >And I&apos;m a</Typography>
+                  <Typography sx={{ textAlign : "start" , fontSize : { xs : "21px" , sm : "28px"} , height : "45px", fontWeight : 700, color : "text.primary" , whiteSpace: "nowrap" }} >And I&apos;m a</Typography>
                   <Box sx={{ ml : "8px"}}>
                     <Box className={hideLetterClassName} >
-                      <Typography className="jop" sx={{ fontSize : { xs : "22px" , sm : "28px"} , height : { xs : "37px" , sm : "45px"}, fontWeight : 700 , color : "text.primary" }} >{jops[jopIndex]}</Typography>
+                      <Typography className="jop" sx={{ fontSize : { xs : "21px" , sm : "28px"} , height : { xs : "37px" , sm : "45px"}, fontWeight : 700 , color : "text.primary" }} >{jops[jopIndex]}</Typography>
                     </Box>
                   </Box>
                 </Box>
