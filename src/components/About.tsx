@@ -21,7 +21,7 @@ const About = () => {
     return () => {
       clearInterval(interval)
     }
-  } , [ setJopIndex ])
+  } , [ setJopIndex , jops.length ])
 
     return (
         <Box id="about" sx={{ display : "flex" , flexDirection : { xs : "column-reverse" , md : "row"} , justifyContent : "center" , alignItems : "center" , gap : "60px" , width : "100vw" , minHeight : "100vh" , pt : { xs : "80px" , sm : "0px"} }}>
