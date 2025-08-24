@@ -28,28 +28,16 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                     <Box sx={{ display : "flex" , flexDirection : "column" , gap : { xs : "10px" , sm : "30px" } , width : { xs : "340px" , sm : "700px"} }}>
                         <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "#00bcd4" , fontWeight : 600 , textAlign : { xs : "center" , sm : "start" } }}>{(projectDetailItems.id === 1 ? "Happy Chatting" : "Digital Voting System")}</Typography>
                         <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px"}}>
-                            <Typography sx={{ fontSize : "17px"}}>{(projectDetailItems.id === 1 ? "" : "")}A real-time messaging app built for simple, seamless conversations</Typography>
-                            <Box sx={{ display : "flex" , gap : "10px" }}>
-                                <CircleIcon sx={{ fontSize : 8 , color : "#00bcd4" , mt : "9px"}} />
-                                <Typography>  
-                                    <Box component={"span"} sx={{ color : "#00bcd4" , fontWeight : 600 ,}}>Real-Time Messaging</Box>
-                                    <Box component={"span"}>- Stay connected instantly with friends, family, and customers</Box>
-                                </Typography>
-                            </Box>
-                            <Box sx={{ display : "flex" , gap : "10px" }}>
-                                <CircleIcon sx={{ fontSize : 8 , color : "#00bcd4" , mt : "9px"}} />
-                                <Typography>  
-                                    <Box component={"span"} sx={{ color : "#00bcd4" , fontWeight : 600 ,}}>Clean, Responsive Design</Box>
-                                    <Box component={"span"}>- Inspired by Telegram, optimized for all devices</Box>
-                                </Typography>
-                            </Box>
-                            <Box sx={{ display : "flex" , gap : "10px" }}>
-                                <CircleIcon sx={{ fontSize : 8 , color : "#00bcd4" , mt : "9px"}} />
-                                <Typography>  
-                                    <Box component={"span"} sx={{ color : "#00bcd4" , fontWeight : 600 ,}}>Modern Tech Stack </Box>
-                                    <Box component={"span"}>- Powered by Next.js, TypeScript, Material UI (MUI), NextAuth.js, Prisma ORM,Redux Toolkit, PostgreSQL, Vercel, and Aiven for PostgreSQL</Box>
-                                </Typography>
-                            </Box>
+                            <Typography sx={{ fontSize : "17px"}}>{(projectDetailItems.id === 1 ? "A straightforward messaging platform that strips away the noise, focusing purely on what matters: the conversation." : "Developed a secure and user-friendly digital voting application for university events, such as a \"Fresher Welcome\" celebration.")}</Typography>
+                            {(projectDetailItems.id === 1 ? happyChattingHeadingDetails : digitalVotingHeadingDetails ).map(item => (
+                                <Box key={item.id} sx={{ display : "flex" , gap : "10px" }}>
+                                    <CircleIcon sx={{ fontSize : 8 , color : "#00bcd4" , mt : "9px"}} />
+                                    <Typography>  
+                                        <Box component={"span"} sx={{ color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Box>
+                                        <Box component={"span"}>{item.about}</Box>
+                                    </Typography>
+                                </Box>
+                            ))}
                         </Box>
                         <Box sx={{ display : "flex" , alignItems : "center" , gap : "15px" , mt : { xs : "10px" , sm : "0px"} }}>
                             <Button component="a" href={(projectDetailItems.id === 1 ? "https://chatting-rust.vercel.app" : "https://digital-voting.vercel.app")} target="_blank" rel="noopener noreferrer" variant="outlined" sx={{ display :"flex" , alignItems : "center" , gap : "10px" , textTransform : "none" , boxShadow : "0px 0px 5px #2BCFFC" , transition : "all ease" , ":hover" : { boxShadow : "3px 3px 5px #2BCFFC"} }}>
@@ -63,49 +51,102 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                         </Box>
                     </Box>
                 </Box>
-                    {projectDetailItems.id === 1 ? (happyChattingDetails.map(item => (
-                        <Box key={item.id} sx={{ width : "100%"  , minHeight : "80%" , display : "flex" , flexDirection : { xs : "column" , sm : (item.id % 2 ? "row" : "row-reverse") } , justifyContent : "center" , alignItems : "center" , gap : { xs : "30px" , sm : "60px" }}}>
-                            <Box sx={{ width : { xs : "350px" , sm : "600px" } , height : { xs : "220px" , sm : "400px" }}}>
-                                <Image  alt={"happy-chatting-detail-img"} src={item.imgUrl} width={1000} height={1000} style={{  width : "100%" , height : "auto" , borderRadius : "5px" }} />
-                            </Box>
-                            <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px", maxWidth : "550px" }}>
-                                <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Typography>
-                                {item.messages.map(mess => (
-                                    <Box key={mess} sx={{ display : "flex" , gap : "10px"}}>
-                                        <CircleIcon sx={{ fontSize : 8 , mt : "9px" }} />
-                                        <Typography>{mess}</Typography>
-                                    </Box>
-                                ))}
-                            </Box>
+                {projectDetailItems.id === 1 ? (happyChattingDetails.map(item => (
+                    <Box key={item.id} sx={{ width : "100%"  , minHeight : "80%" , display : "flex" , flexDirection : { xs : "column" , sm : (item.id % 2 ? "row" : "row-reverse") } , justifyContent : "center" , alignItems : "center" , gap : { xs : "30px" , sm : "60px" }}}>
+                        <Box sx={{ width : { xs : "350px" , sm : "600px" } , height : { xs : "220px" , sm : "400px" }}}>
+                            <Image  alt={"happy-chatting-detail-img"} src={item.imgUrl} width={1000} height={1000} style={{  width : "100%" , height : "auto" , borderRadius : "5px" }} />
                         </Box>
-                    )))
-                    : (digitalVotingDetails.map(item => (
-                        <Box key={item.id} sx={{ width : "100%"  , minHeight : { xs : "95%" , sm :  "80%" }, display : "flex" , flexDirection : { xs : "column" , sm : (item.id % 2 ? "row-reverse" : "row") } , justifyContent : "center" , alignItems : "center" , gap : { xs : "30px" , sm : "60px" }}}>
-                            <Box sx={{ display : "flex" , gap : "10px"}}>
-                                {item.imgUrls.map(url => (
-                                    <Box key={url} sx={{ width : { xs : "105px" , sm : "185px"} , height : { xs : "200px" , sm : "350px" } }}>
-                                        <Image  alt={"digital-voting-detail-img"} src={url} width={1000} height={1000} style={{  width : "auto" , height : "100%" , borderRadius : "5px" }} />
-                                    </Box>
-                                ))}
-                            </Box>
-                            <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" , maxWidth : "550px" }}>
-                                <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Typography>
-                                {item.messages.map(mess => (
-                                    <Box key={mess} sx={{ display : "flex" , gap : "10px"}}>
-                                        <CircleIcon sx={{ fontSize : 8 , mt : "9px" }}  />
-                                        <Typography>{mess}</Typography>
-                                    </Box>
-                                ))}
-                            </Box>
+                        <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px", maxWidth : "550px" }}>
+                            <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Typography>
+                            {item.messages.map(mess => (
+                                <Box key={mess} sx={{ display : "flex" , gap : "10px"}}>
+                                    <CircleIcon sx={{ fontSize : 8 , mt : "9px" }} />
+                                    <Typography>{mess}</Typography>
+                                </Box>
+                            ))}
                         </Box>
-                    )))}
-                {/* </Box> */}
+                    </Box>
+                )))
+                : (digitalVotingDetails.map(item => (
+                    <Box key={item.id} sx={{ width : "100%"  , minHeight : { xs : "95%" , sm :  "80%" }, display : "flex" , flexDirection : { xs : "column" , sm : (item.id % 2 ? "row-reverse" : "row") } , justifyContent : "center" , alignItems : "center" , gap : { xs : "30px" , sm : "60px" }}}>
+                        <Box sx={{ display : "flex" , gap : "10px"}}>
+                            {item.imgUrls.map(url => (
+                                <Box key={url} sx={{ width : { xs : "105px" , sm : "185px"} , height : { xs : "200px" , sm : "350px" } }}>
+                                    <Image  alt={"digital-voting-detail-img"} src={url} width={1000} height={1000} style={{  width : "auto" , height : "100%" , borderRadius : "5px" }} />
+                                </Box>
+                            ))}
+                        </Box>
+                        <Box sx={{ display : "flex" , flexDirection : "column" , gap : "10px" , maxWidth : "550px" }}>
+                            <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "#00bcd4" , fontWeight : 600 }}>{item.heading}</Typography>
+                            {item.messages.map(mess => (
+                                <Box key={mess} sx={{ display : "flex" , gap : "10px"}}>
+                                    <CircleIcon sx={{ fontSize : 8 , mt : "9px" }}  />
+                                    <Typography>{mess}</Typography>
+                                </Box>
+                            ))}
+                        </Box>
+                    </Box>
+                )))}
             </DialogContent>
         </Dialog>
     )
 }
 
 export default ProjectDetail;
+
+interface HeadingDetail {
+    id : number;
+    heading : string;
+    about : string;
+}
+
+const digitalVotingHeadingDetails : HeadingDetail[] = [
+    {
+        id : 1 ,
+        heading : "About ",
+        about :"- A digital voting platform designed to streamline elections for university events."
+    },
+    {
+        id : 2 ,
+        heading : "User-Friendly Design ",
+        about :"- The application's design prioritizes a simple and intuitive user experience for both administrators and voters"
+    },
+    {
+        id : 3 ,
+        heading : "My Role ",
+        about :"- As the sole developer, I was responsible for the entire full-stack development of this application"
+    },
+    {
+        id : 4 ,
+        heading : "Modern Tech Stack ",
+        about :"- Powered by Next.js, TypeScript, Material UI (MUI), NextAuth.js, Prisma ORM,Redux Toolkit, PostgreSQL, Vercel, and Render for PostgreSQL"
+    },
+   
+]
+
+const happyChattingHeadingDetails : HeadingDetail[] = [
+    {
+        id : 1 ,
+        heading : "About",
+        about :"- A real-time messaging app built for simple, seamless conversations"
+    },
+    {
+        id : 2 ,
+        heading : "Clean, Responsive Design ",
+        about :"- Inspired by Telegram, optimized for all devices"
+    },
+    {
+        id : 3 ,
+        heading : "My Role ",
+        about :"- As the sole developer, I was responsible for the entire full-stack development of this application"
+    },
+    {
+        id : 4 ,
+        heading : "Modern Tech Stack ",
+        about :"- Powered by Next.js, TypeScript, Material UI (MUI), NextAuth.js, Prisma ORM,Redux Toolkit, PostgreSQL, Vercel, and Aiven for PostgreSQL"
+    },
+    
+]
 
 interface HappyChattingDetailType {
     id : number,
@@ -153,7 +194,6 @@ interface DigitalVotingDetailType {
     heading : string,
     messages : string[]
 }
-
 
 const digitalVotingDetails : DigitalVotingDetailType[] = [
     {
