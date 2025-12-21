@@ -30,7 +30,7 @@ const Skills = () => {
     return (
         <Box id="skill" sx={{ width : "100vw" , height : "100vh" , display : "flex" , flexDirection : "column" , justifyContent : "start" , alignItems : "center"  , pt : "95px" , gap : "10px" }}>
             <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" } , color : "white" , fontWeight : 600  }}>My <Box component={"span"} sx={{  background : "linear-gradient(to right , #2196f3, #21cbf3 , #dde1e4ff )" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >Skills</Box></Typography>
-            <Box sx={{ display : "flex" , gap : "10px"}}>{categorieItems.map(item => (
+            <Box sx={{ display : "flex" , gap : "10px" , maxWidth : "90vw" , overflowX : "auto" , overflowY : "hidden" , pb : "5px"}}>{categorieItems.map(item => (
                 <Chip key={item.id} clickable onClick={() => setSelectedCategoryId(item.id)} label={item.name} sx={{ bgcolor : (item.id === selectedCategoryId ? "secondary.main" : "") , ":hover" : { bgcolor : "secondary.dark"}}} />
             ))}</Box>
             <Box ref={skillBoxRef} sx={{ width : { xs : "380px" , sm : "96%"} , maxHeight : "calc(100vh - 200px )" , overflowY : "auto" , overflowX : "auto" , display : "grid" , gridTemplateColumns : {  xs: "repeat(1, 1fr)", sm: "repeat(2, 1fr)" , md : "repeat(3, 1fr)", lg: "repeat(4, 1fr)" } , gap : "15px" , p : "10px"}}>
@@ -86,6 +86,10 @@ const categorieItems : CategoryItemType[] = [
     },
     {
         id : 4,
+        name : "Cloud & Deployment"
+    },
+    {
+        id : 5,
         name : "Tools"
     },
 ]
@@ -111,14 +115,30 @@ const skillItems : SkillItemType[] = [
     },
     {
         id : 1,
-        iconUrl : "/html-css-icon.png",
-        name : "HTML CSS",
-        percentageToLearn : 5,
-        width : 60,
+        iconUrl : "/react.svg",
+        name : "React.js",
+        percentageToLearn : 10,
+        width : 32,
         categoryId : 2
     },
     {
         id : 2,
+        iconUrl : "/nodejs.svg",
+        name : "Node.js",
+        percentageToLearn : 15,
+        width : 40,
+        categoryId : 3
+    },
+    {
+        id : 3,
+        iconUrl : "/Expressjs.png",
+        name : "Express.js",
+        percentageToLearn : 15,
+        width : 30,
+        categoryId : 3
+    },
+    {
+        id : 4,
         iconUrl : "/typescript-icon.svg",
         name : "TypeScript",
         percentageToLearn : 5,
@@ -127,26 +147,10 @@ const skillItems : SkillItemType[] = [
 
     },
     {
-        id : 3,
-        iconUrl : "/mui-icon.svg",
-        name : "Material UI (MUI)",
-        percentageToLearn : 5,
-        width : 30,
-        categoryId : 2
-    },
-    {
-        id : 4,
-        iconUrl : "/nextauthjs-icon.svg",
-        name : "NextAuth.js",
-        percentageToLearn : 20,
-        width : 30,
-        categoryId : 3
-    },
-    {
         id : 5,
         iconUrl : "/prisma-icon.svg",
         name : "Prisma ORM",
-        percentageToLearn : 10,
+        percentageToLearn : 5,
         width : 30,
         categoryId : 3
     },
@@ -160,6 +164,30 @@ const skillItems : SkillItemType[] = [
     },
     {
         id : 7,
+        iconUrl : "/nextauthjs-icon.svg",
+        name : "NextAuth.js",
+        percentageToLearn : 20,
+        width : 30,
+        categoryId : 3
+    },
+    {
+        id : 8,
+        iconUrl : "/mui-icon.svg",
+        name : "Material UI (MUI)",
+        percentageToLearn : 5,
+        width : 30,
+        categoryId : 2
+    },
+    {
+        id : 9,
+        iconUrl : "/tailwindCss.svg",
+        name : "Tailwind Css",
+        percentageToLearn : 5,
+        width : 32,
+        categoryId : 2
+    },
+    {
+        id : 10,
         iconUrl : "/postgresql-icon.svg",
         name : "PostgreSQL",
         percentageToLearn : 9,
@@ -167,51 +195,93 @@ const skillItems : SkillItemType[] = [
         categoryId : 3
     },
     {
-        id : 8,
-        iconUrl : "/aiven-icon.svg",
-        name : "Aiven for PostgreSQL",
-        percentageToLearn : 15,
-        width : 30,
-        categoryId : 3
-    },
-    {
-        id : 9,
-        iconUrl : "/render-icon.svg",
-        name : "Render for PostgreSQL",
-        percentageToLearn : 15,
-        width : 30,
-        categoryId : 3
-    },
-    {
-        id : 10,
-        iconUrl : "/vscode-icon.svg",
-        name : "Visual Studio Code",
-        percentageToLearn : 5,
-        width : 30,
-        categoryId : 4
-    },
-    {
         id : 11,
-        iconUrl : "/tableplue-icon.png",
-        name : "Table Plus",
-        percentageToLearn : 5,
+        iconUrl : "/mongodb.svg",
+        name : "MongoDB",
+        percentageToLearn : 10,
         width : 30,
-        categoryId : 4
+        categoryId : 3
     },
     {
         id : 12,
-        iconUrl : "/github-icon.svg",
-        name : "Git Hub",
+        iconUrl : "/vercel.svg",
+        name : "Vercel",
         percentageToLearn : 5,
-        width : 30,
+        width : 25,
         categoryId : 4
     },
     {
         id : 13,
+        iconUrl : "/html-css-icon.png",
+        name : "HTML CSS",
+        percentageToLearn : 5,
+        width : 60,
+        categoryId : 2
+    },
+    {
+        id : 14,
+        iconUrl : "/vscode-icon.svg",
+        name : "Visual Studio Code",
+        percentageToLearn : 5,
+        width : 30,
+        categoryId : 5
+    },
+    {
+        id : 15,
+        iconUrl : "/github-icon.svg",
+        name : "Git Hub",
+        percentageToLearn : 5,
+        width : 30,
+        categoryId : 5
+    },
+    {
+        id : 16,
         iconUrl : "/figma-icon.svg",
         name : "Figma",
         percentageToLearn : 19,
         width : 20,
+        categoryId : 5
+    },
+    {
+        id : 17,
+        iconUrl : "/mongodbAtlas.png",
+        name : "MongoDB Atlas",
+        percentageToLearn : 5,
+        width : 50,
         categoryId : 4
     },
+    {
+        id : 18,
+        iconUrl : "/aiven-icon.svg",
+        name : "Aiven (Managed PostgreSQL)",
+        percentageToLearn : 15,
+        width : 30,
+        categoryId : 4
+    },
+    {
+        id : 19,
+        iconUrl : "/render-icon.svg",
+        name : "Render (Managed PostgreSQL)",
+        percentageToLearn : 15,
+        width : 30,
+        categoryId : 4
+    },
+    
+    {
+        id : 20,
+        iconUrl : "/tableplue-icon.png",
+        name : "Table Plus",
+        percentageToLearn : 5,
+        width : 30,
+        categoryId : 5
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
 ]

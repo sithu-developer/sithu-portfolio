@@ -63,6 +63,11 @@ interface ProjectType {
 
 const projects : ProjectType[] = [
   {
+    id : 0 ,
+    name : "Moon Maocai",
+    url : "/moon-maocai.png"
+  },
+  {
     id : 1 ,
     name : "Happy Chatting",
     url : "/happy-chatting.png"

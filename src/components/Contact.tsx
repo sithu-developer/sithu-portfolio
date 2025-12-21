@@ -1,5 +1,5 @@
 "use client"
-import { Alert, Box, Button, CircularProgress, IconButton, Snackbar, TextField, Typography } from "@mui/material"
+import { Alert, Box, Button, CircularProgress, IconButton, Snackbar, SvgIconProps, TextField, Typography } from "@mui/material"
 import MailRoundedIcon from '@mui/icons-material/MailRounded';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
@@ -11,6 +11,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import emailjs from "@emailjs/browser";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 interface SendMessageType {
     name : string
@@ -81,15 +82,11 @@ const Contact = () => {
                     <Box>
                         <Typography sx={{ color : "#21cbf3" , textAlign : "center" , mt : "20px" , fontWeight : 500 }} >Connect With Me</Typography>
                         <Box sx={{ display : "flex" , alignItems : "center" , justifyContent : "center" , gap : "10px"}}>
-                            <IconButton component={"a"} target="_blank" rel="noopener noreferrer" href="https://t.me/SithuNaing8209" >
-                                <TelegramIcon sx={{ color : "#21cbf3" , transition : "all ease" , ":hover" : { transform : "translateY(-3px)" , scale : 1.2} }}  />
-                            </IconButton>
-                            <IconButton component="a" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/share/1YvXsd74nr/"  >
-                                <FacebookIcon sx={{ color : "#21cbf3" , transition : "all ease" , ":hover" : { transform : "translateY(-3px)" , scale : 1.2} }} />
-                            </IconButton>
-                            <IconButton component="a" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/sithunaing8209?igsh=cjkwd2QybGtha210" >
-                                <InstagramIcon sx={{ color : "#21cbf3" , transition : "all ease" , ":hover" : { transform : "translateY(-3px)" , scale : 1.2} }} />
-                            </IconButton>
+                            {directLinkItems.map(item => (
+                                <IconButton key={item.id} component="a" target="_blank" rel="noopener noreferrer" href={item.url} >
+                                    <item.icon sx={{ color : "#21cbf3" , transition : "all ease" , ":hover" : { transform : "translateY(-3px)" , scale : 1.2} }}  />
+                                </IconButton>
+                            ))}
                         </Box>
                     </Box>
                 </Box>
@@ -186,7 +183,7 @@ const contactItems : ContactItemType[] = [
     {
         id : 1,
         name : "Email",
-        value : "sithunaing8209@gmail.com",
+        value : "sithunaing156204@gmail.com",
         icon : MailRoundedIcon
     },
     {
@@ -202,4 +199,34 @@ const contactItems : ContactItemType[] = [
         icon : LocationOnRoundedIcon
     },
     
+]
+
+
+interface DirectLinkType {
+    id : number,
+    url : string,
+    icon : React.ComponentType<SvgIconProps>
+}
+
+const directLinkItems : DirectLinkType[] = [
+    {
+        id : 0,
+        icon : LinkedInIcon,
+        url : "https://www.linkedin.com/in/sithu-naing-660b0b394"
+    },
+    {
+        id : 1,
+        icon : TelegramIcon,
+        url : "https://t.me/SithuNaing8209"
+    },
+    {
+        id : 2,
+        icon : FacebookIcon,
+        url : "https://www.facebook.com/share/1YvXsd74nr/"
+    },
+    {
+        id : 3,
+        icon : InstagramIcon,
+        url : "https://www.instagram.com/sithunaing8209?igsh=cjkwd2QybGtha210"
+    },
 ]
