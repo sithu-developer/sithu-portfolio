@@ -38,7 +38,6 @@ const About = () => {
                   </Box>
                 </Box>
                 <Typography sx={{ textAlign : "justify" , color : "#cfccccff" }} >I love turning complex problems into elegant solutions. As a Next.js full-stack developer, I enjoy the entire development lifecycle - from architecting data models to deploying serverless functions and creating intuitive front-end interfaces.  I&apos;m always looking for new challenges that allow me to grow my skills and contribute to meaningful projects.</Typography>
-                {/* <Button variant="outlined" sx={{ textTransform : "none" , color : "secondary.main" , border : "1px solid #2c89fcff" , boxShadow : "3px 5px 15px #2BCFFC" , ":hover" : { boxShadow : "3px 5px 25px #2BCFFC" } , mt : "35px"  }} >Download Resume</Button> */}
             </Box>
           </Slide>
           <Slide in direction="left" timeout={{ enter : 800 }} >

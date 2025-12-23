@@ -117,7 +117,7 @@ const skillItems : SkillItemType[] = [
         id : 1,
         iconUrl : "/react.svg",
         name : "React.js",
-        percentageToLearn : 10,
+        percentageToLearn : 5,
         width : 32,
         categoryId : 2
     },
@@ -166,7 +166,7 @@ const skillItems : SkillItemType[] = [
         id : 7,
         iconUrl : "/nextauthjs-icon.svg",
         name : "NextAuth.js",
-        percentageToLearn : 20,
+        percentageToLearn : 15,
         width : 30,
         categoryId : 3
     },
@@ -238,7 +238,7 @@ const skillItems : SkillItemType[] = [
         id : 16,
         iconUrl : "/figma-icon.svg",
         name : "Figma",
-        percentageToLearn : 19,
+        percentageToLearn : 15,
         width : 20,
         categoryId : 5
     },
@@ -254,7 +254,7 @@ const skillItems : SkillItemType[] = [
         id : 18,
         iconUrl : "/aiven-icon.svg",
         name : "Aiven (Managed PostgreSQL)",
-        percentageToLearn : 15,
+        percentageToLearn : 5,
         width : 30,
         categoryId : 4
     },
@@ -262,7 +262,7 @@ const skillItems : SkillItemType[] = [
         id : 19,
         iconUrl : "/render-icon.svg",
         name : "Render (Managed PostgreSQL)",
-        percentageToLearn : 15,
+        percentageToLearn : 5,
         width : 30,
         categoryId : 4
     },

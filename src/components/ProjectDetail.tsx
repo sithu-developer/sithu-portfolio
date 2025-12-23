@@ -25,7 +25,7 @@ const ProjectDetail = ({ projectDetailItems , setProjectDetailItems } : Props) =
                     <Typography sx={{ fontSize : { xs : "30px" , sm : "35px" }, fontWeight : 600 , background : "linear-gradient(to right, #dde1e4ff , #2196f3, #21cbf3 , white)" , backgroundClip : "text" , WebkitBackgroundClip : "text" , WebkitTextFillColor : "transparent" }} >{projectDetailItems.selectedProject.name}</Typography>
                 </Box>
                 <Box sx={{ width : "100%" , minHeight : { xs : "95%" , sm :  "80%" } , display : "flex" , flexDirection : { xs : "column" , sm : "row"} , justifyContent : "center" , alignItems : "center" , gap : { xs : "10px" , sm :  "60px"} , pt : { xs : "50px" , sm : "0px"} }}>
-                    <Box sx={{ width : { xs : "100px" , sm : "160px"} , height : { xs : "200px" , sm : "300px" }}}>
+                    <Box sx={{ width : "auto" , height : { xs : "200px" , sm : "300px" }}}>
                         <Image  alt={"hc"} src={projectDetailItems.selectedProject.headingUrl} width={1000} height={1000} style={{  width : "auto" , height : "100%" , borderRadius : "5px"  }} />
                     </Box>
                     <Box sx={{ display : "flex" , flexDirection : "column" , gap : { xs : "10px" , sm : "30px" } , width : { xs : "340px" , sm : "700px"} }}>
@@ -110,17 +110,17 @@ export const malaMaocaiHeadingDetails : HeadingDetail[] = [
     {
         id : 1,
         heading : "About ",
-        about : "- Platform that is bridging the gap between hungry customers and efficient kitchen management."
+        about : "- Platform that is bridging the gap between hungry customers and efficient kitchen management"
     },
     {
         id : 2 ,
-        heading : "User-Friendly Design ",
-        about :"- The application's design prioritizes a simple and intuitive user experience for both kitchen and customers"  // here
+        heading : "UI & UX ",
+        about :"- The UI design is very easy to use and the decoration is specialized for Mala Maocai"
     },
     {
         id : 3 ,
         heading : "My Role ",
-        about :"- As the sole developer, I was responsible for the entire full-stack development of this application"
+        about :"- As the solo developer, I was responsible for the entire full-stack development of this application"
     },
     {
         id : 4 ,
@@ -143,7 +143,7 @@ export const digitalVotingHeadingDetails : HeadingDetail[] = [
     {
         id : 3 ,
         heading : "My Role ",
-        about :"- As the sole developer, I was responsible for the entire full-stack development of this application"
+        about :"- As the solo developer, I was responsible for the entire full-stack development of this application"
     },
     {
         id : 4 ,
@@ -167,7 +167,7 @@ export const happyChattingHeadingDetails : HeadingDetail[] = [
     {
         id : 3 ,
         heading : "My Role ",
-        about :"- As the sole developer, I was responsible for the entire full-stack development of this application"
+        about :"- As the solo developer, I was responsible for the entire full-stack development of this application"
     },
     {
         id : 4 ,
@@ -184,6 +184,81 @@ export interface BodyDetailType {
     heading : string,
     messages : string[]
 }
+
+export const malaMaocaiDetails : BodyDetailType[] = [
+    {
+        id : 7,
+        imgUrls : ["/maocai-customer-main.png"],
+        heading : "Customer main",
+        messages : []
+    },
+    {
+        id : 8,
+        imgUrls : ["/maocai-order-maocai.png"],
+        heading : "Order Maocai",
+        messages : []
+    },
+    {
+        id : 9,
+        imgUrls : ["/maocai-voucher.png"],
+        heading : "Order Voucher",
+        messages : []
+    },
+    {
+        id : 10,
+        imgUrls : ["/maocai-spicylevel.png"],
+        heading : "spicylevel",
+        messages : []
+    },
+    {
+        id : 11,
+        imgUrls : ["/maocai-orderListIcon.png"],
+        heading : "Orderlist icon",
+        messages : []
+    },
+    {
+        id : 12,
+        imgUrls : ["/maocai-orderlist.png"],
+        heading : "Orderlist",
+        messages : []
+    },
+    {
+        id : 1,
+        imgUrls : [ "/maocai-admin-signin.png" ],
+        heading : "Admin Sign In",
+        messages : [ "Admin can easily sign up with Google to create new company" , "Or sign in with Google acc that is already signed up" ]
+    },
+    {
+        id : 2,
+        imgUrls : [ "/maocai-modification.png" ],
+        heading : "Category Modification",
+        messages : [ "After that, categories can be created, updated and deleted in this page." , "Recomment that the maximum numbers of category should be three!"]
+    },
+    {
+        id : 3,
+        imgUrls : ["/maocai-food-modification.png"],
+        heading : "Food Modification",
+        messages : []
+    },
+    {
+        id : 4,
+        imgUrls : ["/maocai-table-modification.png"],
+        heading : "Table Modification",
+        messages : []
+    },
+    {
+        id : 5,
+        imgUrls : ["/maocai-setting.png"],
+        heading : "Settings",
+        messages : []
+    },
+    {
+        id : 6,
+        imgUrls : ["/maocai-order-admin.png"],
+        heading : "Order from Admin",
+        messages : []
+    },
+]
 
 export const happyChattingDetails : BodyDetailType[] = [
     {

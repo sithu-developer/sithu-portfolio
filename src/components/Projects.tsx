@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Box, Grow, Typography } from "@mui/material";
 import Image from "next/image";
 import "@/style/project.css";
-import ProjectDetail, { BodyDetailType, digitalVotingDetails, digitalVotingHeadingDetails, happyChattingDetails, happyChattingHeadingDetails, HeadingDetail, malaMaocaiHeadingDetails } from "./ProjectDetail";
+import ProjectDetail, { BodyDetailType, digitalVotingDetails, digitalVotingHeadingDetails, happyChattingDetails, happyChattingHeadingDetails, HeadingDetail, malaMaocaiDetails, malaMaocaiHeadingDetails } from "./ProjectDetail";
 
 export interface ProjectDetailItems { 
   open : boolean, 
@@ -72,12 +72,12 @@ const projects : ProjectType[] = [
     id : 0 ,
     name : "Mala Maocai",
     url : "/moon-maocai.png",
-    headingUrl : "/moon-maocai.png",
+    headingUrl : "/maocai-main-ipad.png",
     headingTypo : "Bridging the gap between hungry customers and efficient kitchen management.",
     headingDetail : malaMaocaiHeadingDetails,
     codeSource : "https://github.com/sithu-developer/maocai.git",
     liveDemo : "https://moon-maocai.vercel.app",
-    bodyDetail : []
+    bodyDetail : malaMaocaiDetails
   },
   {
     id : 1 ,
