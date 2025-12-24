@@ -73,7 +73,7 @@ const projects : ProjectType[] = [
     name : "Mala Maocai",
     url : "/moon-maocai.png",
     headingUrl : "/maocai-main-ipad.png",
-    headingTypo : "Bridging the gap between hungry customers and efficient kitchen management.",
+    headingTypo : "The ordering app specialized for Mala Maocai in which customers can order foods without any waiter.",
     headingDetail : malaMaocaiHeadingDetails,
     codeSource : "https://github.com/sithu-developer/maocai.git",
     liveDemo : "https://moon-maocai.vercel.app",

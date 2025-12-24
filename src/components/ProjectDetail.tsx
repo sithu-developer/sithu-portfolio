@@ -187,76 +187,76 @@ export interface BodyDetailType {
 
 export const malaMaocaiDetails : BodyDetailType[] = [
     {
-        id : 7,
+        id : 1,
         imgUrls : ["/maocai-customer-main.png"],
-        heading : "Customer main",
-        messages : []
+        heading : "Customer Main Page",
+        messages : [ "If customers scan the QR generated from the admin, they will see this page first" , "They can enter any category from this page" ]
     },
     {
-        id : 8,
+        id : 2,
         imgUrls : ["/maocai-order-maocai.png"],
-        heading : "Order Maocai",
-        messages : []
+        heading : "Order Foods",
+        messages : ["After entering, customers will see this page in which they can order the foods provided by kitchen", "The left side is the foods you can order" , "The two boxs at the top right of the screen let you change the food category" ]
     },
     {
-        id : 9,
+        id : 3,
         imgUrls : ["/maocai-voucher.png"],
-        heading : "Order Voucher",
-        messages : []
+        heading : "Voucher",
+        messages : ["The selected foods are added to the voucher list" , "Customers can see the totol price in the voucher" , "And the order comfirm button can be clickable if there is a food in the voucher" , "The tax and service charge percents can be change in the admin side (Kitchen)"]
     },
     {
-        id : 10,
+        id : 4,
         imgUrls : ["/maocai-spicylevel.png"],
-        heading : "spicylevel",
-        messages : []
+        heading : "Spicy Level",
+        messages : [ "After clicking order comfirm, the box that asks the spicy levels will appear if there is a food related to the main category" , "The number of spicy levels can be edited in admin side (Kitchen)" ]
     },
     {
-        id : 11,
+        id : 5,
         imgUrls : ["/maocai-orderListIcon.png"],
-        heading : "Orderlist icon",
-        messages : []
+        heading : "Orderlist Icon",
+        messages : [ "After ordering, the orderlist icon appeared at the top left of the screen" , "Customers can click that icon to see their orders" , "This icon is appeared if there is only active order related to the table" ]
     },
     {
-        id : 12,
+        id : 6,
         imgUrls : ["/maocai-orderlist.png"],
         heading : "Orderlist",
-        messages : []
+        messages : ["After clicking orderlist icon, they will see their active orders" , "They can also see the state of the order like \"ORDERED\", \"COOKING\" " , "If the state of the order becomes \"DONE\", that order will dispear from the order list" , "The state of the orders are controlled by kitchen"]
     },
     {
-        id : 1,
+        id : 7,
         imgUrls : [ "/maocai-admin-signin.png" ],
         heading : "Admin Sign In",
         messages : [ "Admin can easily sign up with Google to create new company" , "Or sign in with Google acc that is already signed up" ]
     },
     {
-        id : 2,
+        id : 8,
         imgUrls : [ "/maocai-modification.png" ],
         heading : "Category Modification",
-        messages : [ "After that, categories can be created, updated and deleted in this page." , "Recomment that the maximum numbers of category should be three!"]
+        messages : [ "After that, categories can be created, updated and deleted in this page." , "Recomment that the maximum numbers of category should be three to be compatible with UI of the customer side!" , "The icon at the top right of the each category can be clickable to edit the related category" , "And the each box can be clickable to enter the foods section of the related category"]
     },
     {
-        id : 3,
+        id : 9,
         imgUrls : ["/maocai-food-modification.png"],
         heading : "Food Modification",
-        messages : []
+        messages : ["In the food section, foods can also be created, updated and deleted." , "Category heading can be clickable to return to the category section"]
     },
     {
-        id : 4,
+        id : 10,
         imgUrls : ["/maocai-table-modification.png"],
         heading : "Table Modification",
-        messages : []
+        messages : ["To get to the table section, the third icon in side bar must be clicked" , "The QR image can be created for each table" , "And each QR image can be printed just clicking the print button"]
     },
     {
-        id : 5,
+        id : 11,
         imgUrls : ["/maocai-setting.png"],
         heading : "Settings",
-        messages : []
+        messages : ["In the settings, company name, tax percentage, service charge percentage and spicy levels can be changed" , "There is also sign out button to sign out from the admin side"]
     },
     {
-        id : 6,
+        id : 12,
         imgUrls : ["/maocai-order-admin.png"],
         heading : "Order from Admin",
-        messages : []
+        messages : ["This page is the order list page in which chef can see the orders from all tables" , "And the state of the orders can be changed in this page"]
     },
 ]
 
