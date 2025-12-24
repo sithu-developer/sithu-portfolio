@@ -85,7 +85,7 @@ const projects : ProjectType[] = [
     url : "/happy-chatting.png",
     headingUrl : "/hc-phone.png",
     headingTypo : "A straightforward messaging platform that strips away the noise, focusing purely on what matters: the conversation.",
-    headingDetail : digitalVotingHeadingDetails,
+    headingDetail : happyChattingHeadingDetails,
     codeSource : "https://github.com/sithu-developer/chatting.git",
     liveDemo : "https://chatting-rust.vercel.app",
     bodyDetail : happyChattingDetails
@@ -96,7 +96,7 @@ const projects : ProjectType[] = [
     url : "/digital-voting.png",
     headingUrl : "/digital-voting-sign-in.png",
     headingTypo : "Developed a secure and user-friendly digital voting application for university events, such as a \"Fresher Welcome\" celebration.",
-    headingDetail : happyChattingHeadingDetails,
+    headingDetail : digitalVotingHeadingDetails,
     codeSource : "https://github.com/sithu-developer/Digital-Voting.git",
     liveDemo : "https://digital-voting.vercel.app",
     bodyDetail : digitalVotingDetails
