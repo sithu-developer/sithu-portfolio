@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Button, Slide, Typography } from "@mui/material";
+import { Box, Slide, Typography } from "@mui/material";
 import Image from "next/image";
 import "@/style/about.css";
 import { useEffect, useState } from "react";
