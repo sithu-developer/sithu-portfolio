@@ -87,7 +87,7 @@ const projects : ProjectType[] = [
     headingTypo : "A straightforward messaging platform that strips away the noise, focusing purely on what matters: the conversation.",
     headingDetail : happyChattingHeadingDetails,
     codeSource : "https://github.com/sithu-developer/chatting.git",
-    liveDemo : "https://chatting-rust.vercel.app",
+    liveDemo : "https://happy-chatting.vercel.app",
     bodyDetail : happyChattingDetails
   },
   {
